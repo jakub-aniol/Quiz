@@ -1,0 +1,184 @@
+2016-04-30 21:05:49 - Duplicate entry '1' for key 'PRIMARY'
+2016-04-30 21:22:47 - Dodane pytanie: dsds  2   false
+
+2016-04-30 21:32:16 - Duplicate entry '5' for key 'PRIMARY'
+2016-04-30 21:34:04 - Dodana odpowiedź: 2  3   false
+6
+2016-04-30 21:34:04 - Dodane pytanie: ttt
+2016-04-30 21:34:05 - Dodano quiz: Moj pierszy Quiz
+2016-04-30 21:37:48 - Dodana odpowiedź: hghghgh  3   false
+9
+2016-04-30 21:38:52 - Dodana odpowiedź:   4   false
+10
+2016-04-30 21:38:52 - Dodane pytanie: eeee
+2016-04-30 21:38:52 - Dodano quiz: Moj pierszy Quiz
+2016-04-30 21:40:39 - Dodana odpowiedź: 32  2   false
+
+2016-04-30 21:40:39 - Dodane pytanie: rrr
+2016-04-30 21:40:39 - Dodano quiz: Moj pierszy Quiz
+2016-04-30 21:43:12 - Dodana odpowiedź: re  4   false
+
+2016-04-30 21:43:12 - Dodane pytanie: ttt
+2016-04-30 21:43:13 - Dodano quiz: Moj pierszy Quiz
+2016-04-30 21:49:47 - Dodana odpowiedź: trtrtr  3   false
+
+2016-04-30 21:49:47 - Dodane pytanie: hhhhhhhhhhhhhhhhhhhh
+2016-04-30 21:49:47 - Dodano quiz: Moj pierszy Quiz
+2016-04-30 21:56:51 - Dodana odpowiedź: rererere  3   false
+
+2016-04-30 21:56:51 - Dodane pytanie: jjjjjjjjjjjj
+2016-04-30 21:56:52 - Dodano quiz: Moj pierszy Quiz
+2016-04-30 21:58:43 - Dodana odpowiedź: SQL  1   false
+
+2016-04-30 21:58:43 - Dodane pytanie: rrr
+2016-04-30 21:58:43 - Dodano quiz: Moj pierszy Quiz
+2016-04-30 21:59:10 - Dodana odpowiedź: 21  21   false
+
+2016-04-30 21:59:10 - Dodane pytanie: uuu
+2016-04-30 21:59:10 - Dodano quiz: Moj pierszy Quiz
+2016-04-30 22:01:29 - Dodana odpowiedź: 32  1   false
+
+2016-04-30 22:01:29 - Dodane pytanie: rere
+2016-04-30 22:01:30 - Dodano quiz: Moj pierszy Quiz
+2016-04-30 22:12:18 - Dodana odpowiedź: 32  1   false
+
+2016-04-30 22:12:18 - Dodane pytanie: rer
+2016-04-30 22:12:18 - Dodano quiz: Moj pierszy Quiz
+2016-04-30 23:07:48 - Utworzono z pliku: Moj pierszy Quiz
+2016-05-01 10:19:49 - Otworzono z pliku: Moj pierszy Quiz
+2016-05-01 10:19:49 - Pytnie
+Pytanie1  4
+[Odpowiedź zła pierwsza  1   false
+, Odpowiedź zła pierwsza  11   false
+, Odpowiedź pierwsza dobra  2   false
+, Odpowiedź pierwsza dobra  2   false
+]
+2016-05-01 10:20:18 - Odpowiedz[1]
+2016-05-01 10:20:18 - Pytnie
+Pytanie2  22
+[Odpowiedź zła druga  -1   false
+, Odpowiedź zła druga  0   false
+, Odpowiedź druga dobra  22   false
+, Odpowiedź druga dobra  3   false
+]
+2016-05-01 10:20:21 - Odpowiedz2
+2016-05-01 10:26:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-01 10:26:31 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-01 10:26:31 - HHH000206: hibernate.properties not found
+2016-05-01 10:26:31 - HHH000021: Bytecode provider name : javassist
+2016-05-01 10:26:31 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-01 10:26:31 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-01 10:26:31 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-01 10:26:31 - HHH10001001: Connection properties: {useUnicode=true, user=root, password=****, characterEncoding=UTF-8}
+2016-05-01 10:26:31 - HHH10001003: Autocommit mode: false
+2016-05-01 10:26:31 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-01 10:26:32 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-01 10:27:00 - Otworzono z konsoli: Moj pierszy Quiz
+2016-05-01 10:27:00 - Pytnie
+lol 1
+[lol  1   false
+]
+2016-05-01 10:27:02 - Odpowiedz1
+2016-05-01 10:27:02 - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/quiz]
+2016-05-01 10:33:34 - Otworzono z pliku: Moj pierszy Quiz
+2016-05-01 10:33:37 - Odpowiedz [1]
+2016-05-01 10:33:38 - Odpowiedz 2
+2016-05-01 10:37:48 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-01 10:37:48 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-01 10:37:48 - HHH000206: hibernate.properties not found
+2016-05-01 10:37:48 - HHH000021: Bytecode provider name : javassist
+2016-05-01 10:37:48 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-01 10:37:48 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-01 10:37:48 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-01 10:37:48 - HHH10001001: Connection properties: {useUnicode=true, user=root, password=****, characterEncoding=UTF-8}
+2016-05-01 10:37:48 - HHH10001003: Autocommit mode: false
+2016-05-01 10:37:48 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-01 10:37:49 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-01 10:38:10 - Otworzono z konsoli: Moj pierszy Quiz
+2016-05-01 10:38:14 - Odpowiedz [1, 2]
+2016-05-01 10:38:14 - Otworzono z konsoli: Moj pierszy Quiz
+2016-05-01 10:38:14 - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/quiz]
+2016-05-01 10:42:42 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-01 10:42:42 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-01 10:42:42 - HHH000206: hibernate.properties not found
+2016-05-01 10:42:42 - HHH000021: Bytecode provider name : javassist
+2016-05-01 10:42:42 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-01 10:42:42 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-01 10:42:42 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-01 10:42:42 - HHH10001001: Connection properties: {useUnicode=true, user=root, password=****, characterEncoding=UTF-8}
+2016-05-01 10:42:42 - HHH10001003: Autocommit mode: false
+2016-05-01 10:42:42 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-01 10:42:42 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-01 10:42:55 - Otworzono z konsoli: Moj pierszy Quiz
+2016-05-01 10:42:55 - Pytanie: pierwsze
+2016-05-01 10:43:36 - Odpowiedz 1
+2016-05-01 10:43:36 - Zamknięto z konsoli: Moj pierszy Quiz
+2016-05-01 10:51:55 - Otworzono z pliku: Moj pierszy Quiz
+2016-05-01 10:51:55 - Pytanie: Pytanie1 
+2016-05-01 10:51:58 - Odpowiedz [1]
+2016-05-01 10:51:58 - Pytanie: Pytanie2 
+2016-05-01 10:51:59 - Odpowiedz 1
+2016-05-01 10:51:59 - Zamknieto z pliku: Moj pierszy Quiz
+2016-05-01 10:54:54 - Otworzono z pliku: Moj pierszy Quiz
+2016-05-01 10:54:54 - Pytanie: Pytanie1 
+2016-05-01 10:55:02 - Odpowiedz [2]
+2016-05-01 10:55:02 - Pytanie: Pytanie2 
+2016-05-01 10:55:05 - Odpowiedz 2
+2016-05-01 10:55:05 - Zamknieto z pliku: Moj pierszy Quiz
+2016-05-01 10:56:40 - Otworzono z pliku: Moj pierszy Quiz
+2016-05-01 10:56:40 - Pytanie: Pytanie1 
+2016-05-01 10:56:43 - Odpowiedz [2]
+2016-05-01 10:56:43 - Pytanie: Pytanie2 
+2016-05-01 10:56:46 - Odpowiedz 2
+2016-05-01 10:56:46 - Zamknieto z pliku: Moj pierszy Quiz
+2016-05-01 11:01:22 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-01 11:01:22 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-01 11:01:22 - HHH000206: hibernate.properties not found
+2016-05-01 11:01:22 - HHH000021: Bytecode provider name : javassist
+2016-05-01 11:01:22 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-01 11:01:23 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-01 11:01:23 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-01 11:01:23 - HHH10001001: Connection properties: {useUnicode=true, user=root, password=****, characterEncoding=UTF-8}
+2016-05-01 11:01:23 - HHH10001003: Autocommit mode: false
+2016-05-01 11:01:23 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-01 11:01:23 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-01 11:01:36 - Otworzono z konsoli: Moj pierszy Quiz
+2016-05-01 11:01:36 - Pytanie: 1
+2016-05-01 11:01:37 - Odpowiedz 1
+2016-05-01 11:01:37 - Zamknięto z konsoli: Moj pierszy Quiz
+2016-05-01 11:01:37 - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/quiz]
+2016-05-01 11:02:34 - Otworzono z pliku: Moj pierszy Quiz
+2016-05-01 11:02:34 - Pytanie: Pytanie1 
+2016-05-01 11:02:36 - Odpowiedz [1]
+2016-05-01 11:02:36 - Pytanie: Pytanie2 
+2016-05-01 11:02:37 - Odpowiedz 1
+2016-05-01 11:02:37 - Zamknieto z pliku: Moj pierszy Quiz
+2016-05-01 11:03:33 - Otworzono z pliku: Moj pierszy Quiz
+2016-05-01 11:03:33 - Pytanie: Pytanie1 
+2016-05-01 11:03:36 - Pytanie: Pytanie2 
+2016-05-01 11:03:37 - Zamknieto z pliku: Moj pierszy Quiz
+2016-05-01 11:05:07 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-01 11:05:07 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-01 11:05:07 - HHH000206: hibernate.properties not found
+2016-05-01 11:05:07 - HHH000021: Bytecode provider name : javassist
+2016-05-01 11:05:07 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-01 11:05:08 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-01 11:05:08 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-01 11:05:08 - HHH10001001: Connection properties: {useUnicode=true, user=root, password=****, characterEncoding=UTF-8}
+2016-05-01 11:05:08 - HHH10001003: Autocommit mode: false
+2016-05-01 11:05:08 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-01 11:05:08 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-01 11:05:17 - Otworzono z konsoli: Moj pierszy Quiz
+2016-05-01 11:05:17 - Pytanie: 1
+2016-05-01 11:05:18 - Zamknięto z konsoli: Moj pierszy Quiz
+2016-05-01 11:05:18 - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/quiz]
