@@ -13,56 +13,49 @@ import java.util.List;
  */
 
 public class QuizFileReader {
-    public static List<Question> readFileforQuestion() {
+
+    public static List<Question> readFileforQuestion(String fileName) {
         String line;
-        String questionName = null;
-        String answerName = null;
-        Category enCategory = null;
-        int pointsbyAnser;
+        String questionName;
+        String answerName;
+        Category enCategory;
+        int pointsByAnwser;
         int maxPointsByQuestion;
         int numberOFAnswers;
         boolean isAnswerCorrect;
         boolean isQuestionMultiply;
-        List<Answer> answerList = new ArrayList<Answer>();
+        List<Answer> answerList = new ArrayList<>();
         Question question = null;
         Answer answer;
-        List<Question> questionList = new ArrayList<Question>();
-        File file = new File("src/main/quiz1test");
+        List<Question> questionList = new ArrayList<>();
+        File file = new File(fileName);
 
         try (BufferedReader in = new BufferedReader(new FileReader(file))) {
 
             while ((line = in.readLine()) != null) {
-
                 if (line.startsWith("?")) {
-
                     numberOFAnswers = getNumberOFAnswers(line);
                     enCategory = Category.valueOf(line.substring(line.indexOf('%') + 1, line.indexOf('#') - 1));
                     isQuestionMultiply = new Boolean(line.substring(line.indexOf('*') + 1));
                     questionName = line.substring(1, line.indexOf('%'));
 
-                    answerList = new ArrayList<Answer>();
+                    answerList = new ArrayList<>();
 
                     question = new Question(questionName, enCategory, isQuestionMultiply, numberOFAnswers, answerList);
                     questionList.add(question);
 
-                }
-
-                else if (line.startsWith("!")) {
-
+                } else if (line.startsWith("!")) {
                     answerName = line.substring(line.indexOf("!") + 1, line.indexOf("%") - 1);
                     enCategory = Category.valueOf(line.substring(line.indexOf('%') + 1, line.indexOf('^') - 1));
-                    pointsbyAnser = Integer.parseInt(line.substring(line.indexOf("^") + 1, line.indexOf("*") - 1));
+                    pointsByAnwser = Integer.parseInt(line.substring(line.indexOf("^") + 1, line.indexOf("*") - 1));
                     isAnswerCorrect = new Boolean(line.substring(line.indexOf('*') + 1));
 
-                    answer = new Answer(answerName, enCategory, pointsbyAnser, isAnswerCorrect);
+                    answer = new Answer(answerName, enCategory, pointsByAnwser, isAnswerCorrect);
                     answerList.add(answer);
 
                     question.countingMaxPoints();
-
                 }
             }
-
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

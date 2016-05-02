@@ -57,15 +57,10 @@ public class QuizTest {
         //given
         Quiz quiz = new Quiz(listQuestions);
         int expected = 19;
-
         //when
         int result = 0;
-
         quiz.countMaxPointForQuiz();
         result = quiz.getMaxPointsQuiz();
-        System.out.println("exp: "+expected);
-        System.out.println("res: "+result);
-
         //then
         assertThat(expected).isEqualTo(result);
     }
@@ -75,17 +70,11 @@ public class QuizTest {
         //given
         Quiz quiz = new Quiz(listQuestions);
         int expected = 19;
-
         //when
-        int result = 0;
-
+        int result;
         quiz.countingGainedPoints(quiz);
         result = quiz.getMaxPointsQuiz();
-        System.out.println("exp: "+expected);
-        System.out.println("res: "+result);
-
         //then
         assertThat(expected).isEqualTo(result);
     }
-
 }

@@ -23,10 +23,8 @@ public class Start {
         System.out.println("Wybierz opcję");
         System.out.println("Wczytaj ankietę z pliku, wpisz 1");
         System.out.println("Wpisz ankietę w kreatorze, wpisz 2");
-
         i = scanner.nextInt();
-
-        System.out.println(i);
+        System.out.println("Wybrales: "+i);
         if(i==1){
             QuizCreator quizCreator = new QuizCreator();
 
@@ -44,8 +42,8 @@ public class Start {
 
             QuizCreator quizCreator = new QuizCreator();
             List<Question> questionsList = new ArrayList<>();
-
-            Question question = QuestionCreator.creatigQuestion();
+            QuestionCreator questionCreator = new QuestionCreator();
+            Question question = questionCreator.creatigQuestion();
 
             questionsList.add(question);
 

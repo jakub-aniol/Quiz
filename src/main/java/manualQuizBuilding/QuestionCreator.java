@@ -1,96 +1,91 @@
 package manualQuizBuilding;
 
 import entityFactory.DAO;
-import org.apache.log4j.*;
+import org.apache.log4j.Logger;
 import settings.Answer;
 import settings.Category;
 import settings.Question;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * Created by jakub on 18.04.16.
  */
 
 public class QuestionCreator {
-    private static Scanner scanner = new Scanner(System.in);
+
     final static Logger logger = Logger.getLogger(QuestionCreator.class.getName());
 
 
-    public static Question creatigQuestion() {
-        Scanner scanner = new Scanner(System.in);
-        List<Answer> answerList = new ArrayList<Answer>();
+    public Question creatigQuestion() {
+        DataGeter dataGeter = new DataGeter(System.in, System.out);
+        List<Answer> answerList = new ArrayList<>();
+        String questionName = decideQuestionName(dataGeter);
+        int ansNumber = decideAnswersNumber(dataGeter);
+        boolean multiply = setMultipilty(ansNumber);
+        Category category = asignToCategory(dataGeter);
 
-        String questionName = decideQuestionName(scanner);
-
-        int ansNumber = decideAnswersNumber(scanner);
-
-        boolean multiply = decideMultipilty(ansNumber);
-
-        String strCategory = asignToCategory();
-
-        asignAnswers(answerList, ansNumber, strCategory);
-        Question question = new Question(questionName, Category.valueOf(strCategory), multiply, ansNumber, answerList);
+        asignAnswers(answerList, ansNumber, category);
+        Question question = new Question(questionName, category, multiply, ansNumber, answerList);
         DAO.addingDbQuestion(question);
-        logger.info("Dodane pytanie: "+question.getQuestionName());
+        logger.info("Dodane pytanie: " + question.getQuestionName());
 
-                return question;
+        return question;
     }
 
-    private static void asignAnswers(List<Answer> answerList, int ansNumber, String strCategory) {
+    private void asignAnswers(List<Answer> answerList, int ansNumber, Category category) {
         System.out.println("Przypisuj odpowiedzi");
         for (int i = 0; i < ansNumber; i++) {
-            answerList.add(manualQuizBuilding.AnswerCreator.creatingAnswer(Category.valueOf(strCategory)));
+            answerList.add(manualQuizBuilding.AnswerCreator.creatingAnswer(category));
         }
     }
 
-    private static String asignToCategory() {
-        System.out.println("Wybierz kategorię");
+    public Category asignToCategory(DataGeter dataGeter) {
+        Category category;
+        category = dataGeter.askForCategory("Wybierz Kategorię z podanej listy");
         System.out.println(Arrays.toString(Category.values()));
-
-        String strCategory;
-        do {
-            strCategory = scanner.nextLine().toString();
-
-            for (Category a : Category.values())
-                if (strCategory.equals(a)) ;
+        /*while (!category.equals(Category.valueOf(category.toString())));
+        category= dataGeter.askForCategory("podałeś złą kategorię spubuj pobownie");
+            for (Category a : Category.values()){
+                if (category.equals(a))
             break;
-        } while (!strCategory.equals(Category.valueOf(strCategory).toString()));
-        return strCategory;
+        }*/
+        return category;
     }
 
-    private static boolean decideMultipilty(int ansNumber) {
+    public boolean setMultipilty(int ansNumber) {
         boolean wielokrotnie = true;
         if (ansNumber > 1)
             return wielokrotnie;
         return !wielokrotnie;
     }
 
-    private static int decideAnswersNumber(Scanner scanner) {
-        System.out.println("Podaj ilość odpowiedzi");
-        int ansNumber;
+    public static int decideAnswersNumber(DataGeter dataGeter) {
+        int ansNumber = 0;
         try {
-            ansNumber = Integer.parseInt(scanner.nextLine());
-            if (ansNumber > 5 && ansNumber < 1)
-                throw new manualQuizBuilding.WrongAmountOfAnswersException("sa");
-
-        } catch (NumberFormatException | WrongAmountOfAnswersException e) {
+            ansNumber = dataGeter.askForInteger("Podaj ilość odpowiedzi pomiędzy 1 a 4");
+        } catch (InputMismatchException e) {
             e.printStackTrace();
-            System.out.println("Nie podaleś właściwej wartosci dla ilości odpowiedzi, wstawiono 1");
-            ansNumber = 1;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        while (ansNumber < 1 || ansNumber > 4)
+            try {
+                ansNumber = dataGeter.askForInteger("");
+            } catch (InputMismatchException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         return ansNumber;
     }
 
-    private static String decideQuestionName(Scanner scanner) {
-        System.out.println("Podaj nazwę pytania");
-        String questionName;
-        questionName = scanner.nextLine();
-        return questionName;
+    public static String decideQuestionName(DataGeter dataGeter) {
+        String strName;
+        strName = dataGeter.askForString("Podaj nazwę pytania");
+        return strName;
     }
-
-
 }

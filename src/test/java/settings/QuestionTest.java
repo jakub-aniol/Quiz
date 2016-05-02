@@ -41,10 +41,8 @@ public class QuestionTest {
     public void testIfPoinsAreCountedProperlyForMultiply() {
         //given
         int expected = 2;
-
         //when
         question1.countingMaxPoints();
-
         //then
         assertThat(question1.getMaxPoints()).isEqualTo(expected);
     }
@@ -53,13 +51,10 @@ public class QuestionTest {
     public void testIfPoinsAreCountedProperlyForNotMultiply() {
         //given
         int expected = 0;
-
         //when
         question2.countingMaxPoints();
-
         //then
         assertThat(question2.getMaxPoints()).isEqualTo(expected);
-
     }
 
     @Test
@@ -85,5 +80,4 @@ public class QuestionTest {
         //then
         assertThat(maxExpected).isEqualTo(result);
     }
-
 }
