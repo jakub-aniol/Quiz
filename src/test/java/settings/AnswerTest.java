@@ -10,8 +10,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Created by jakub on 21.04.16.
  */
 public class AnswerTest {
-    static public Answer answer1e = new Answer("Pytanie1", Category.SQL, 2, true);
-    static public Answer answer2e = new Answer("Pytanie1", Category.SQL, 3, false);
+    static public Answer answer1e = Answer.createAnswer("Pytanie1", Category.SQL, 2, true);
+    static public Answer answer2e = Answer.createAnswer("Pytanie1", Category.SQL, 3, false);
     private Answer answer3e;
     private Answer answer4e;
     private Answer answer1n;
@@ -51,27 +51,27 @@ public class AnswerTest {
         boolean isProper2 = false;
 
 
-        answer1e = new Answer(answerName1, sql, answerPoints1, isProper1);
-        answer2e = new Answer(answerName1, sql, answerPoints2, isProper2);
-        answer3e = new Answer(answerName1, sql, answerPoints1, isProper1);
-        answer4e = new Answer(answerName1, sql, answerPoints2, isProper2);
+        answer1e = Answer.createAnswer(answerName1, sql, answerPoints1, isProper1);
+        answer2e = Answer.createAnswer(answerName1, sql, answerPoints2, isProper2);
+        answer3e = Answer.createAnswer(answerName1, sql, answerPoints1, isProper1);
+        answer4e = Answer.createAnswer(answerName1, sql, answerPoints2, isProper2);
 
-        answer1n = new Answer(answerName2, sql, answerPoints1, isProper1);
-        answer2n = new Answer(answerName2, sql, answerPoints1, isProper2);
-        answer3n = new Answer(answerName2, sql, answerPoints2, isProper1);
-        answer4n = new Answer(answerName2, sql, answerPoints2, isProper2);
-        answer5n = new Answer(answerName2, javaCore, answerPoints1, isProper1);
-        answer6n = new Answer(answerName2, javaCore, answerPoints1, isProper2);
-        answer7n = new Answer(answerName2, javaCore, answerPoints2, isProper1);
-        answer8n = new Answer(answerName2, javaCore, answerPoints2, isProper2);
-        answer9n = new Answer(answerName1, sql, answerPoints1, isProper1);
-        answer10n = new Answer(answerName1, sql, answerPoints1, isProper2);
-        answer11n = new Answer(answerName1, sql, answerPoints2, isProper1);
-        answer12n = new Answer(answerName1, sql, answerPoints2, isProper2);
-        answer13n = new Answer(answerName1, javaCore, answerPoints1, isProper1);
-        answer14n = new Answer(answerName1, javaCore, answerPoints1, isProper2);
-        answer15n = new Answer(answerName1, javaCore, answerPoints2, isProper1);
-        answer16n = new Answer(answerName1, javaCore, answerPoints2, isProper2);
+        answer1n = Answer.createAnswer(answerName2, sql, answerPoints1, isProper1);
+        answer2n = Answer.createAnswer(answerName2, sql, answerPoints1, isProper2);
+        answer3n = Answer.createAnswer(answerName2, sql, answerPoints2, isProper1);
+        answer4n = Answer.createAnswer(answerName2, sql, answerPoints2, isProper2);
+        answer5n = Answer.createAnswer(answerName2, javaCore, answerPoints1, isProper1);
+        answer6n = Answer.createAnswer(answerName2, javaCore, answerPoints1, isProper2);
+        answer7n = Answer.createAnswer(answerName2, javaCore, answerPoints2, isProper1);
+        answer8n = Answer.createAnswer(answerName2, javaCore, answerPoints2, isProper2);
+        answer9n = Answer.createAnswer(answerName1, sql, answerPoints1, isProper1);
+        answer10n = Answer.createAnswer(answerName1, sql, answerPoints1, isProper2);
+        answer11n = Answer.createAnswer(answerName1, sql, answerPoints2, isProper1);
+        answer12n = Answer.createAnswer(answerName1, sql, answerPoints2, isProper2);
+        answer13n = Answer.createAnswer(answerName1, javaCore, answerPoints1, isProper1);
+        answer14n = Answer.createAnswer(answerName1, javaCore, answerPoints1, isProper2);
+        answer15n = Answer.createAnswer(answerName1, javaCore, answerPoints2, isProper1);
+        answer16n = Answer.createAnswer(answerName1, javaCore, answerPoints2, isProper2);
     }
 
     @DataProvider
@@ -88,7 +88,7 @@ public class AnswerTest {
         int answerPoints1 = 2;
         boolean isProper1 = true;
 
-        Answer answer4 = new Answer(answerName1, sql, answerPoints1, isProper1);
+        Answer answer4 = Answer.createAnswer(answerName1, sql, answerPoints1, isProper1);
 
         //when
         boolean result = answer4.equals(answer);
@@ -114,7 +114,7 @@ public class AnswerTest {
         String answerName1 = "Pytanie4";
         int answerPoints1 = 2;
         boolean isProper1 = true;
-        Answer answer4 = new Answer(answerName1, slq, answerPoints1, isProper1);
+        Answer answer4 = Answer.createAnswer(answerName1, slq, answerPoints1, isProper1);
 
         //when
         boolean result = answer4.equals(answer);

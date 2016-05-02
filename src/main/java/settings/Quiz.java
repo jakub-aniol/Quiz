@@ -1,13 +1,15 @@
 package settings;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.List;
 
 /**
- * Created by jakub on 18.04.16.
+ * Object for storying information about the whole Quiz
+ * Created by Jakub
+ * Since 2016-04-30.
  */
 @Entity
 public class Quiz {
@@ -23,16 +25,26 @@ public class Quiz {
     @OneToMany
     private List<Question> qusetionsList;
 
-    public Quiz(){}
-
+    public Quiz() {
+    }
+    /**
+     * Constructor, Question must have:
+     * Now you can provide only Lit of question to create Quiz it is only one implementation of a constructor
+     * Additionally quiz couts maxPopintsQuiz by itslef using method countMaxPointForQuiz()
+     * @param questionsList - List with objetcs Question {@link settings.Question}
+     *
+     */
     public Quiz(List<Question> questionsList) {
         this.setQusetionsList(questionsList);
         countMaxPointForQuiz();
     }
 
-
     public int getMaxPointsQuiz() {
         return maxPointsQuiz;
+    }
+
+    public void setMaxPointsQuiz(int maxPointsQuiz) {
+        this.maxPointsQuiz = maxPointsQuiz;
     }
 
     public void setMaxPointForQuiz(int maxPointForQuiz) {
@@ -75,10 +87,6 @@ public class Quiz {
         this.answerAfterPassing = answerAfterPassing;
     }
 
-    public void setMaxPointsQuiz(int maxPointsQuiz) {
-        this.maxPointsQuiz = maxPointsQuiz;
-    }
-
     public int getPointsToPass() {
         return pointsToPass;
     }
@@ -103,24 +111,36 @@ public class Quiz {
         this.qusetionsList = qusetionsList;
     }
 
-    public void countMaxPointForQuiz(){
+    /**
+     * Method for counting points one can get for a quiz
+     * It uses a method countingMaxPoints() in a loop to count maxPoints by adding points from one question to another {@link settings.Question}
+     */
+
+    public void countMaxPointForQuiz() {
         int maxPoint = 0;
-        for(Question que : this.getQuestionList()){
+        for (Question que : this.getQuestionList()) {
             que.countingMaxPoints();
-            maxPoint+=que.getMaxPoints();
+            maxPoint += que.getMaxPoints();
         }
         this.setMaxPointForQuiz(maxPoint);
     }
 
+    /**
+     * Method for counting points one got for a quiz
+     * if Answer param isPorper is established to true and answer is matched as choosen it added points one geins while doing quiz.
+     *
+     * @param quiz {@link settings.Quiz}
+     * @return int
+     */
     public int countingGainedPoints(Quiz quiz) {
         boolean choosen = true;
         int getherPoints = 0;
 
-        for(Question ques : quiz.getQuestionList())
+        for (Question ques : quiz.getQuestionList())
             for (Answer ans : ques.getAnswerList()) {
                 if (ans.getChoosen() == choosen) {
                     if (ans.getIsProper() == ans.getIsProper()) {
-                        getherPoints+= ans.getAnswerPoints();
+                        getherPoints += ans.getAnswerPoints();
                     }
                 }
             }

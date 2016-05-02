@@ -21,7 +21,7 @@ public class QuestionPresenterTest {
     public void testIfProperStringisReturned(){
         QuestionPresenter questionPresenter = new QuestionPresenter();
 
-        Answer answer = new Answer("Pytanie", Category.GIT, 2, true);
+        Answer answer = Answer.createAnswer("Pytanie", Category.GIT, 2, true);
         Question mockQuestion = mock(Question.class);
         when(mockQuestion.getQuestionName()).thenReturn("Pytanie");
         List <Answer> lista = new ArrayList<>();
@@ -30,7 +30,7 @@ public class QuestionPresenterTest {
         String expected = "Pytanie\n1. Pytanie  2   false\n";
 
         //when
-        String result = questionPresenter.showQuestion(mockQuestion);
+        String result = QuestionPresenter.showQuestion(mockQuestion);
         System.out.println(result);
         //then
         assertThat(result).isEqualTo(expected);

@@ -56,7 +56,7 @@ public class QuizCreatorTest {
         //given
         QuizCreator quizCreator = new QuizCreator();
 
-        Answer answer = new Answer("Odpowiedź", Category.GIT, 2, true);
+        Answer answer = Answer.createAnswer("Odpowiedź", Category.GIT, 2, true);
         List<Answer> answersList = new ArrayList<>();
         answersList.add(answer);
         Question question = new Question("Pytanie", Category.GIT, false, 1, answersList);

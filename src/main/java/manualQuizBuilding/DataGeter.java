@@ -4,6 +4,7 @@ import settings.Category;
 
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -18,7 +19,7 @@ public class DataGeter {
         this.out = out;
     }
 
-    public int askForInteger(String message) throws Exception {
+    public int askForInteger(String message) throws InputMismatchException {
         int i = 0;
         out.println(message);
         i = scanner.nextInt();
@@ -38,5 +39,4 @@ public class DataGeter {
         str = scanner.nextLine();
         return str;
     }
-
 }

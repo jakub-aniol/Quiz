@@ -1,46 +1,62 @@
 package practice.practiceQuiz;
 
 
+import manualQuizBuilding.DataGeter;
+import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.TreeSet;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.stub;
+
 /**
  * Created by ja on 01.05.16.
  */
 public class QuestionAnswererTest {
 
-  /*  @Test
-    public void testifChoosenAnswerIsMarked(){
-        Question mockedQuestion = mock(Question.class);
-        List<Integer> mockedListaOdp = mock(List.class);
-        List<Answer> mockedListAnsw = mock(List.class);
+    private static final int MIN_ANSWER = 1;
+    private static final int MAX_ANSWER = 4;
 
+    @Test
+    public void testWhatSingleAnswerIsChoosen() {
+
+        QuestionAnswerer questionAnswerer = new QuestionAnswerer();
+        DataGeter mockDataGeter = mock(DataGeter.class);
+        int answer = 1;
+        stub(mockDataGeter.askForInteger("Podaj liczbe w przedziale " + MIN_ANSWER + " do " + MAX_ANSWER)).toReturn(answer);
+
+        int expected = 1;
+
+        int result = questionAnswerer.choseSingleAnswer(mockDataGeter);
+
+
+        assertThat(expected).isEqualTo(result);
+    }
+
+    @Test
+    public void testWhatMultipluAnswersAreChoosen(){
+        //given
+        QuestionAnswerer questionAnswerer = new QuestionAnswerer();
+        DataGeter mockDataGeter = mock(DataGeter.class);
+        TreeSet<Integer> tResult;
+        ArrayList<Integer> result = new ArrayList<>();
+        int answer = 1;
+        stub(mockDataGeter.askForInteger("Podaj liczbe w przedziale " + MIN_ANSWER + " do " + MAX_ANSWER)).toReturn(answer);
         //when
-        QuestionAnswererTest questionAnswererTest = new QuestionAnswererTest();
 
+        result = (questionAnswerer.choseMultiplyAnswer(mockDataGeter));
 
-        boolean checked = true;
-        when(mockedListAnsw.get(0).setChoosen(checked)).thenReturn(checked);
-
-        when(questionAnswererTest.markChoosenAnswer(mockedQuestion, mockedListaOdp).
-
+        int expected =1;
+        ArrayList<Integer>expectedList = new ArrayList<>();
+        expectedList.add(expected);
+        //then
+        assertThat(expectedList).isEqualTo(result);
 
 
 
     }
-}
 
-    public void markChoosenAnswer(Question question, List<Integer> listaOdp) {
-        List<Answer> answerList = question.getAnswerList();
 
-        boolean checkd = true;
-        int i = 1;
-        for (Answer ans : answerList) {
-            for (Integer odp : listaOdp) {
-                if (i == odp) {
-                    System.out.println("odpowiedz: " + i);
-                    ans.setChoosen(checkd);
-                }
-            }
-            i++;
-        }
-
-*/
-}
+    }

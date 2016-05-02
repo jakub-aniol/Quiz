@@ -3,7 +3,10 @@ package settings;
 import javax.persistence.*;
 
 /**
- * Created by jakub on 18.04.16.
+ * Object for storying information about single Answer
+ * Created by Jakub
+ * Since 2016-04-30.
+ *
  */
 @Entity
 @Table(name = "Odpowiedzi")
@@ -27,11 +30,23 @@ public class Answer implements Comparable<Answer> {
 
     public Answer(){}
 
+    /**
+     * Basic Constructor, Answer must have:
+     * @param answerName text for answer
+     * @param category - category of topis of quiz/questions/answers from {@link settings.Category}
+     * @param answerPoints - howm many points one can get for good answering
+     * @param isProper - if an answer is proper regarding to the question
+     *
+     */
     public Answer(String answerName, Category category, int answerPoints, boolean isProper) {
         this.answerName = answerName;
         this.category = category;
         this.answerPoints = answerPoints;
         this.isProper = isProper;
+    }
+
+    public static Answer createAnswer(String answerName, Category category, int answerPoints, boolean isProper) {
+        return new Answer(answerName, category, answerPoints, isProper);
     }
 
     public int getAnswerPoints() {
@@ -122,10 +137,8 @@ public class Answer implements Comparable<Answer> {
         if(this == obj)
             return true;
         Answer answer = (Answer)obj;
-        if(this.category.equals(answer.category)
-            && this.answerName.equals(answer.answerName))
-            return true;
-        return false;
+        return this.category.equals(answer.category)
+                && this.answerName.equals(answer.answerName);
     }
     @Override
     public int hashCode(){

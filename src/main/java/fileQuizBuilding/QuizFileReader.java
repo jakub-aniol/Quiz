@@ -9,18 +9,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by jakub on 18.04.16.
+ * Object alowing to create an answer from a given properly prepared file
+ * Created by Jakub
+ * Since 2016-04-30.
  */
 
 public class QuizFileReader {
 
-    public static List<Question> readFileforQuestion(String fileName) {
+    public static List<Question> readFileForQuestion(String fileName) {
         String line;
         String questionName;
         String answerName;
         Category enCategory;
         int pointsByAnwser;
-        int maxPointsByQuestion;
         int numberOFAnswers;
         boolean isAnswerCorrect;
         boolean isQuestionMultiply;
@@ -50,7 +51,7 @@ public class QuizFileReader {
                     pointsByAnwser = Integer.parseInt(line.substring(line.indexOf("^") + 1, line.indexOf("*") - 1));
                     isAnswerCorrect = new Boolean(line.substring(line.indexOf('*') + 1));
 
-                    answer = new Answer(answerName, enCategory, pointsByAnwser, isAnswerCorrect);
+                    answer = Answer.createAnswer(answerName, enCategory, pointsByAnwser, isAnswerCorrect);
                     answerList.add(answer);
 
                     question.countingMaxPoints();
@@ -61,7 +62,7 @@ public class QuizFileReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return questionList;
+    return questionList;
     }
 
     private static int getNumberOFAnswers(String line) {

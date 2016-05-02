@@ -1,28 +1,22 @@
 package manualQuizBuilding;
 
 import entityFactory.DAO;
-import org.apache.log4j.*;
-
-
+import org.apache.log4j.Logger;
 import settings.Answer;
 import settings.Category;
-
-
-import java.util.Scanner;
-
 
 /**
  * Created by jakub on 18.04.16.
  */
 public class AnswerCreator {
-    private static Scanner scanner = new Scanner(System.in);
     static Logger logger = Logger.getLogger(AnswerCreator.class);
 
+    public Answer creatingAnswer(Category category) {
+        DataGeter dataGeter = new DataGeter(System.in, System.out);
 
-    public static Answer creatingAnswer(Category category) {
-        String answerName = decideAnswerName(scanner);
-        int points = decideMaxPoints(scanner);
-        boolean isTrue = isAnswerCorrect(scanner);
+        String answerName = decideAnswerName(dataGeter);
+        int points = decideMaxPoints(dataGeter);
+        boolean isTrue = isAnswerCorrect(dataGeter);
 
         Answer answer = new Answer(answerName, category, points, isTrue);
         DAO.addingDbAnswer(answer);
@@ -31,12 +25,11 @@ public class AnswerCreator {
         return answer;
     }
 
-    private static int decideMaxPoints(Scanner scanner) {
-        System.out.println("Podaj liczbe punktow za odpowiedź");
+    public int decideMaxPoints(DataGeter dataGeter) {
         int points;
         try {
-            points = Integer.parseInt(scanner.nextLine());
-        } catch (NumberFormatException e) {
+            points = dataGeter.askForInteger("Podaj liczbe punktow za odpowiedź");
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Nie podaleś właściwej wartosci punktow, wstawiono 0");
             points = 0;
@@ -44,23 +37,16 @@ public class AnswerCreator {
         return points;
     }
 
-    private static String decideAnswerName(Scanner scanner) {
-        System.out.println("Podaj treść odpowiedź");
-        String answerName;
-        answerName = scanner.nextLine();
+    public String decideAnswerName(DataGeter dataGeter) {
+        String answerName = dataGeter.askForString("Podaj treść odpowiedź");
         return answerName;
-    }
+    }//można ustawić tak że jak za odpowiedx beda punkty to z automatu ustawi na prawdziwa jak jak bedzie mniej lub rowne zero to na fałszywą
 
-    //można ustawić tak że jak za odpowiedx beda punkty to z automatu ustawi na prawdziwa jak jak bedzie mniej lub rowne zero to na fałszywą
-    private static boolean isAnswerCorrect(Scanner scanner) {
-        System.out.println("czy odpowiedź jest prawdziwa? Jeśli tak wpisz T, w przeciwnym razie będzie fałszywa");
-        String rightAnswer;
+    public boolean isAnswerCorrect(DataGeter dataGeter) {
+        String rightAnswer = dataGeter.askForString("czy odpowiedź jest prawdziwa? Jeśli tak wpisz T, w przeciwnym razie będzie fałszywa");
         boolean isTrue = true;
-        rightAnswer = scanner.nextLine();
-        if (rightAnswer.equals("t") || rightAnswer.equals("T")) {
+        if (rightAnswer.equals("t") || rightAnswer.equals("T"))
             return isTrue;
-        } else
-            return !isTrue;
+        return !isTrue;
     }
-
 }

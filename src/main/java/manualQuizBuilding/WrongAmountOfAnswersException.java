@@ -5,7 +5,7 @@ package manualQuizBuilding;
  */
 public class WrongAmountOfAnswersException extends Throwable {
 
-    public WrongAmountOfAnswersException(){};
+    public WrongAmountOfAnswersException(){}
 
     public WrongAmountOfAnswersException(String name) {
         super(name);

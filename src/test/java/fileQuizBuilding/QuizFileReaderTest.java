@@ -25,7 +25,7 @@ public class QuizFileReaderTest {
 
         List<Question> t = new ArrayList<>();
 
-        assertThat(quizFileReader.readFileforQuestion("src/test/quiz1test")).hasSameClassAs(t);
+        assertThat(QuizFileReader.readFileForQuestion("src/test/quiz1test")).hasSameClassAs(t);
 
     }
 
@@ -34,7 +34,7 @@ public class QuizFileReaderTest {
         //given
         QuizFileReader quizFileReader = new QuizFileReader();
         List<Question> list;
-        list = quizFileReader.readFileforQuestion("src/test/quiz1test");
+        list = QuizFileReader.readFileForQuestion("src/test/quiz1test");
 
         //when
         String resultName = list.get(0).getQuestionName();
@@ -67,7 +67,7 @@ public class QuizFileReaderTest {
 
         QuizFileReader quizFileReader = new QuizFileReader();
         List<Question> list;
-        list = quizFileReader.readFileforQuestion("src/test/quiz1test");
+        list = QuizFileReader.readFileForQuestion("src/test/quiz1test");
 
         Answer[][] answersList = new Answer[2][4];
         for (int i = 0; i < list.size(); i++) {
@@ -77,7 +77,7 @@ public class QuizFileReaderTest {
                 int points = list.get(i).getAnswerList().get(j).getAnswerPoints();
                 boolean isProper = list.get(i).getAnswerList().get(j).getIsProper();
 
-                answersList[i][j] = new Answer(name, nameCategory, points, isProper);
+                answersList[i][j] = Answer.createAnswer(name, nameCategory, points, isProper);
             }
         }
         //when

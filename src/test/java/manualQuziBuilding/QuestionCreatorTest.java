@@ -35,7 +35,7 @@ public class QuestionCreatorTest {
         DataGeter mockDataGeter = mock(DataGeter.class);
         stub(mockDataGeter.askForString("Podaj nazwę pytania")).toReturn(str);
         String expected = "Pytanie";
-        assertThat(expected).isEqualTo(questionCreator.decideQuestionName(mockDataGeter));
+        assertThat(expected).isEqualTo(QuestionCreator.decideQuestionName(mockDataGeter));
     }
 
     @Test
@@ -45,7 +45,7 @@ public class QuestionCreatorTest {
         DataGeter mockDataGeter = mock(DataGeter.class);
         stub(mockDataGeter.askForInteger("Podaj ilość odpowiedzi pomiędzy 1 a 4")).toReturn(numberOfAnswers);
         Integer expected = 3;
-        assertThat(expected).isEqualTo(questionCreator.decideAnswersNumber(mockDataGeter));
+        assertThat(expected).isEqualTo(QuestionCreator.decideAnswersNumber(mockDataGeter));
     }
 
 

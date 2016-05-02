@@ -18,6 +18,9 @@ public class Start {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        QuizCreator quizCreator = new QuizCreator();
+        QuizPresenter quizPresenter = new QuizPresenter();
+        Quiz quiz = quizCreator.makeQuiz();
         int i;
 
         System.out.println("Wybierz opcję");
@@ -26,12 +29,9 @@ public class Start {
         i = scanner.nextInt();
         System.out.println("Wybrales: "+i);
         if(i==1){
-            QuizCreator quizCreator = new QuizCreator();
-
-            Quiz quiz = quizCreator.makeQuiz();
 
             logger.info("Otworzono z pliku: "+quiz.getQuizName());
-            QuizPresenter.showQuizToPractice(quiz);
+            quizPresenter.showQuizToPractice(quiz);
             logger.info("Zamknieto z pliku: "+quiz.getQuizName());
             QuizPresenter.showQuizWithResults(quiz);
         }
@@ -40,17 +40,15 @@ public class Start {
 
             DAO.openFactory();
 
-            QuizCreator quizCreator = new QuizCreator();
             List<Question> questionsList = new ArrayList<>();
             QuestionCreator questionCreator = new QuestionCreator();
             Question question = questionCreator.creatigQuestion();
 
             questionsList.add(question);
 
-            Quiz quiz = quizCreator.makeQuiz(questionsList);
 
             logger.info("Otworzono z konsoli: "+quiz.getQuizName());
-            QuizPresenter.showQuizToPractice(quiz);
+            quizPresenter.showQuizToPractice(quiz);
             logger.info("Zamknięto z konsoli: "+quiz.getQuizName());
             QuizPresenter.showQuizWithResults(quiz);
 

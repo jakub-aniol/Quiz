@@ -14,7 +14,7 @@ public class QuizCreator {
     static Logger logger = Logger.getLogger(QuizCreator.class.getName());
 
     public Quiz makeQuiz() {
-        Quiz quiz = new Quiz(QuizFileReader.readFileforQuestion("src/main/quiz1test"));
+        Quiz quiz = new Quiz(QuizFileReader.readFileForQuestion("src/main/quiz1test"));
         quiz.setQuizName(decideQuizName());
         logger.info("Koniec tworzenia Quizu z pliku: "+quiz.getQuizName());
         return quiz;

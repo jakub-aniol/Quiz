@@ -6,7 +6,10 @@ import java.util.List;
 import static java.util.Collections.max;
 
 /**
- * Created by jakub on 18.04.16.
+ * Object for storying information about single Question
+ * Created by Jakub
+ * Since 2016-04-30.
+ *
  */
 @Entity(name = "Pytania")
 public class Question {
@@ -28,12 +31,21 @@ public class Question {
 
     public Question(){}
 
-    public Question(String questionName, Category category, boolean isMultiply, int numberOfAnswers, List<Answer> answer) {
+    /**
+     * Basic Constructor, Question must have:
+     * @param questionName text for question
+     * @param category - category of topis of quiz/questions/answers from {@link settings.Category}
+     * @param isMultiply - true or false provides information wheather there is only single answer or mulitiply answers are posiible
+     * @param numberOfAnswers - numbers of answers refered to this question
+     * @param answersList - List with objetcs Answer {@link settings.Answer}
+     *
+     */
+    public Question(String questionName, Category category, boolean isMultiply, int numberOfAnswers, List<Answer> answersList) {
         this.questionName = questionName;
         this.category = category;
         this.isMultiply = isMultiply;
         this.numberOfAnswers = numberOfAnswers;
-        this.answerList = answer;
+        this.answerList = answersList;
     }
 
     public boolean isMultiply() {
@@ -116,10 +128,10 @@ public class Question {
     }
 
     /**
-     * Created by jakub on 18.04.16.
-     * For multiply question answer ads each answer points if those are established proper
+     * Method for counting max points one can get for a question
+     * For multiply question answer ads each answer points if its param isPorper is established to true
      * For single question answer choose the answer with max points between others answers in question
-     * and if it is established proper
+     *
      */
     public void countingMaxPoints() {
         int maxPoints = 0;
@@ -138,6 +150,13 @@ public class Question {
                 this.maxPoints = answer.getAnswerPoints();
         }
     }
+
+    /**
+     * Method for counting points one got for a question
+     * For single question answer if its param isPorper is established to true and answer is matched as choosen
+     * For multiply question answer ads each answer points if its param isPorper is established to true and answer is matched as choosen
+     *
+     */
 
     public void countingGainedPoints() {
         int gainedPoints = 0;

@@ -1,6 +1,7 @@
 
+entityFactory
 fileQuizBuilding
 manualQuizBuilding
-practiceQuiz
-presentingQuiz
+practice.practiceQuiz
+practice.presentingQuiz
 settings

@@ -14,9 +14,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class QuizTest {
 
-    Answer answer1e = new Answer("Pytanie1", Category.SQL, 2, true);
-    Answer answer2e = new Answer("Pytanie2", Category.SQL, 3, true);
-    Answer answer3e = new Answer("Pytanie3", Category.SQL, 4, true);
+    Answer answer1e = Answer.createAnswer("Pytanie1", Category.SQL, 2, true);
+    Answer answer2e = Answer.createAnswer("Pytanie2", Category.SQL, 3, true);
+    Answer answer3e = Answer.createAnswer("Pytanie3", Category.SQL, 4, true);
 
     List<Answer> listAnswersT = new ArrayList<>();
     List<Answer> listAnswersF = new ArrayList<>();
@@ -53,7 +53,7 @@ public class QuizTest {
     }
 
     @Test
-    public void testsIfCountingMaxPointForQuizIsProper() {
+    public void testIfCountingMaxPointForQuizIsProper() {
         //given
         Quiz quiz = new Quiz(listQuestions);
         int expected = 19;
@@ -66,7 +66,7 @@ public class QuizTest {
     }
 
     @Test
-    public void testsIfGetherdPointForQuizIsProper() {
+    public void testIfGetherdPointForQuizIsProper() {
         //given
         Quiz quiz = new Quiz(listQuestions);
         int expected = 19;

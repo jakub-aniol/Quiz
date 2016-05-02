@@ -19,7 +19,6 @@ public class QuestionCreator {
 
     final static Logger logger = Logger.getLogger(QuestionCreator.class.getName());
 
-
     public Question creatigQuestion() {
         DataGeter dataGeter = new DataGeter(System.in, System.out);
         List<Answer> answerList = new ArrayList<>();
@@ -37,9 +36,10 @@ public class QuestionCreator {
     }
 
     private void asignAnswers(List<Answer> answerList, int ansNumber, Category category) {
+        AnswerCreator answerCreator = new AnswerCreator();
         System.out.println("Przypisuj odpowiedzi");
         for (int i = 0; i < ansNumber; i++) {
-            answerList.add(manualQuizBuilding.AnswerCreator.creatingAnswer(category));
+            answerList.add(answerCreator.creatingAnswer(category));
         }
     }
 
@@ -69,15 +69,11 @@ public class QuestionCreator {
             ansNumber = dataGeter.askForInteger("Podaj ilość odpowiedzi pomiędzy 1 a 4");
         } catch (InputMismatchException e) {
             e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
         while (ansNumber < 1 || ansNumber > 4)
             try {
                 ansNumber = dataGeter.askForInteger("");
             } catch (InputMismatchException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
                 e.printStackTrace();
             }
         return ansNumber;
