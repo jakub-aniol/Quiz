@@ -9,36 +9,35 @@ import static java.util.Collections.max;
  * Object for storying information about single Question
  * Created by Jakub
  * Since 2016-04-30.
- *
  */
 @Entity(name = "Pytania")
 public class Question {
+    public int maxPoints;
     @Id
     @GeneratedValue
     private int Id;
-    public int maxPoints;
     private String questionName;
     private Category category;
-    private int eIDPytanie;
     private int numberOfAnswers;
     private boolean isMultiply;
     private int gainedPoints;
-    @OneToMany
+    @OneToMany(mappedBy = "question")
     private List<Answer> answerList;
     @ManyToOne
-    @JoinColumn(name="Quiz_ID")
+    //@JoinColumn(name="Quiz_ID")
     private Quiz quiz;
 
-    public Question(){}
+    public Question() {
+    }
 
     /**
      * Basic Constructor, Question must have:
-     * @param questionName text for question
-     * @param category - category of topis of quiz/questions/answers from {@link settings.Category}
-     * @param isMultiply - true or false provides information wheather there is only single answer or mulitiply answers are posiible
-     * @param numberOfAnswers - numbers of answers refered to this question
-     * @param answersList - List with objetcs Answer {@link settings.Answer}
      *
+     * @param questionName    text for question
+     * @param category        - category of topis of quiz/questions/answers from {@link settings.Category}
+     * @param isMultiply      - true or false provides information wheather there is only single answer or mulitiply answers are posiible
+     * @param numberOfAnswers - numbers of answers refered to this question
+     * @param answersList     - List with objetcs Answer {@link settings.Answer}
      */
     public Question(String questionName, Category category, boolean isMultiply, int numberOfAnswers, List<Answer> answersList) {
         this.questionName = questionName;
@@ -52,8 +51,16 @@ public class Question {
         return isMultiply;
     }
 
+    public void setMultiply(boolean multiply) {
+        isMultiply = multiply;
+    }
+
     public List<Answer> getAnswerList() {
         return answerList;
+    }
+
+    public void setAnswerList(List<Answer> answerList) {
+        this.answerList = answerList;
     }
 
     public int getMaxPoints() {
@@ -88,14 +95,6 @@ public class Question {
         this.category = category;
     }
 
-    public int geteIDPytanie() {
-        return eIDPytanie;
-    }
-
-    public void seteIDPytanie(int eIDPytanie) {
-        this.eIDPytanie = eIDPytanie;
-    }
-
     public int getNumberOfAnswers() {
         return numberOfAnswers;
     }
@@ -104,13 +103,6 @@ public class Question {
         this.numberOfAnswers = numberOfAnswers;
     }
 
-    public void setMultiply(boolean multiply) {
-        isMultiply = multiply;
-    }
-
-    public void setAnswerList(List<Answer> answerList) {
-        this.answerList = answerList;
-    }
     public int getId() {
         return Id;
     }
@@ -131,7 +123,6 @@ public class Question {
      * Method for counting max points one can get for a question
      * For multiply question answer ads each answer points if its param isPorper is established to true
      * For single question answer choose the answer with max points between others answers in question
-     *
      */
     public void countingMaxPoints() {
         int maxPoints = 0;
@@ -155,7 +146,6 @@ public class Question {
      * Method for counting points one got for a question
      * For single question answer if its param isPorper is established to true and answer is matched as choosen
      * For multiply question answer ads each answer points if its param isPorper is established to true and answer is matched as choosen
-     *
      */
 
     public void countingGainedPoints() {
@@ -165,14 +155,14 @@ public class Question {
         if (this.isMultiply() == true) {
 
             for (Answer answer : this.answerList) {
-                if (answer.getIsProper() == proper && answer.getChoosen() ==proper)
+                if (answer.getIsProper() == proper && answer.getChoosen() == proper)
                     gainedPoints += answer.getAnswerPoints();
             }
             this.setGainedPoints(gainedPoints);
 
         } else {
             Answer answer = max(this.answerList);
-            if (answer.getIsProper() == proper && answer.getChoosen()==proper)
+            if (answer.getIsProper() == proper && answer.getChoosen() == proper)
                 gainedPoints = answer.getAnswerPoints();
             this.setGainedPoints(gainedPoints);
         }

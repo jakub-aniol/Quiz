@@ -1,5 +1,6 @@
 package manualQuizBuilding;
 
+import entityFactory.DAO;
 import fileQuizBuilding.QuizFileReader;
 import org.apache.log4j.Logger;
 import settings.Question;
@@ -13,24 +14,38 @@ import java.util.List;
 public class QuizCreator {
     static Logger logger = Logger.getLogger(QuizCreator.class.getName());
 
-    public Quiz makeQuiz() {
+    public Quiz creatingQuiz() {
+
         Quiz quiz = new Quiz(QuizFileReader.readFileForQuestion("src/main/quiz1test"));
-        quiz.setQuizName(decideQuizName());
+
+
         logger.info("Koniec tworzenia Quizu z pliku: "+quiz.getQuizName());
+        DAO.addingDbQuiz(quiz);
         return quiz;
     }
 
-    public Quiz makeQuiz(List<Question> questionsList) {
+    public Quiz creatingQuiz(List<Question> questionsList) {
+        DataGeter dataGeter = new DataGeter(System.in, System.out);
         Quiz quiz = new Quiz(questionsList);
-        quiz.setQuizName(decideQuizName());
+
+        for(Question q : questionsList){
+            q.setQuiz(quiz);
+        }
+
+        String quizName = decideQuizName(dataGeter);
+
+
         logger.info("Koniec tworzenia Quizu z konsoli: "+quiz.getQuizName());
+        DAO.addingDbQuiz(quiz);
         return quiz;
     }
 
-    private String decideQuizName() {
-        String quizName = "Moj pierwszy Quiz";
+    private String decideQuizName(DataGeter  dateGeter) {
+        String quizName = dateGeter.askForString("Wpisz nazwę quizu");
         return quizName;
     }
+
+
 
 
 }

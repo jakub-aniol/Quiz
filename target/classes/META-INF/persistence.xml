@@ -7,9 +7,9 @@
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="jakubepam"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/Quiz"/>
+            <property name="javax.persistence.jdbc.user" value="quiz"/>
+            <property name="javax.persistence.jdbc.password" value="quiz"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/quiz"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.connection.useUnicode" value="true" />

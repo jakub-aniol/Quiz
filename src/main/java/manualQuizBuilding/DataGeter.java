@@ -26,17 +26,35 @@ public class DataGeter {
         return i;
     }
 
+    public Category askForCategory() {
+        String strCategory;
+        strCategory = scanner.next();
+        return Category.valueOf(strCategory);
+    }
+
     public Category askForCategory(String message) {
         String strCategory;
         out.println(message);
-        strCategory = scanner.nextLine();
+        strCategory = scanner.next();
         return Category.valueOf(strCategory);
     }
 
     public String askForString(String message) {
         String str;
         out.println(message);
-        str = scanner.nextLine();
+        str = scanner.next();
         return str;
     }
+
+    public boolean askForBoolean(String message) {
+        String str;
+        boolean isProper = true;
+        out.println(message);
+        str = scanner.next();
+        if (str.equals("t") || str.equals("T"))
+            return isProper;
+        return !isProper;
+
+    }
+
 }

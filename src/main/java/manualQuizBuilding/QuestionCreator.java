@@ -21,6 +21,11 @@ public class QuestionCreator {
 
     public Question creatigQuestion() {
         DataGeter dataGeter = new DataGeter(System.in, System.out);
+
+        QuestionBuilder qb = new QuestionBuilder(new Question());
+
+      //  qb.addQuestionName(dataGeter.askForString("Podaj nazwe pytania")).addAnswerToQuestion(new Answer()).addAnswerToQuestion(new Answer()).done();
+
         List<Answer> answerList = new ArrayList<>();
         String questionName = decideQuestionName(dataGeter);
         int ansNumber = decideAnswersNumber(dataGeter);
@@ -29,38 +34,14 @@ public class QuestionCreator {
 
         asignAnswers(answerList, ansNumber, category);
         Question question = new Question(questionName, category, multiply, ansNumber, answerList);
+
+        for(Answer a : answerList)
+        a.setQuestion(question);
+
         DAO.addingDbQuestion(question);
         logger.info("Dodane pytanie: " + question.getQuestionName());
 
         return question;
-    }
-
-    private void asignAnswers(List<Answer> answerList, int ansNumber, Category category) {
-        AnswerCreator answerCreator = new AnswerCreator();
-        System.out.println("Przypisuj odpowiedzi");
-        for (int i = 0; i < ansNumber; i++) {
-            answerList.add(answerCreator.creatingAnswer(category));
-        }
-    }
-
-    public Category asignToCategory(DataGeter dataGeter) {
-        Category category;
-        category = dataGeter.askForCategory("Wybierz Kategorię z podanej listy");
-        System.out.println(Arrays.toString(Category.values()));
-        /*while (!category.equals(Category.valueOf(category.toString())));
-        category= dataGeter.askForCategory("podałeś złą kategorię spubuj pobownie");
-            for (Category a : Category.values()){
-                if (category.equals(a))
-            break;
-        }*/
-        return category;
-    }
-
-    public boolean setMultipilty(int ansNumber) {
-        boolean wielokrotnie = true;
-        if (ansNumber > 1)
-            return wielokrotnie;
-        return !wielokrotnie;
     }
 
     public static int decideAnswersNumber(DataGeter dataGeter) {
@@ -80,8 +61,37 @@ public class QuestionCreator {
     }
 
     public static String decideQuestionName(DataGeter dataGeter) {
-        String strName;
-        strName = dataGeter.askForString("Podaj nazwę pytania");
+        String strName = dataGeter.askForString("Podaj nazwę pytania");
         return strName;
+    }
+
+    private void asignAnswers(List<Answer> answerList, int ansNumber, Category category) {
+        AnswerCreator answerCreator = new AnswerCreator();
+        System.out.println("Przypisuj odpowiedzi");
+        for (int i = 0; i < ansNumber; i++) {
+            answerList.add(answerCreator.creatingAnswer(category));
+        }
+    }
+
+    public Category asignToCategory(DataGeter dataGeter) {
+        Category category;
+        System.out.println("Wybierz Kategorię z podanej listy");
+        System.out.println(Arrays.toString(Category.values()));
+        category = dataGeter.askForCategory();
+        while (!category.equals(Category.valueOf(category.toString())))
+        for (Category a : Category.values()) {
+            if (category.equals(a)) {
+                break;
+            }
+            category = dataGeter.askForCategory("podałeś złą kategorię spubuj pobownie");
+        }
+        return category;
+    }
+
+    public boolean setMultipilty(int ansNumber) {
+        boolean wielokrotnie = true;
+        if (ansNumber > 1)
+            return wielokrotnie;
+        return !wielokrotnie;
     }
 }

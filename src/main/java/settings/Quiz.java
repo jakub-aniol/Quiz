@@ -22,7 +22,7 @@ public class Quiz {
     private int maxPointsQuiz;
     private int pointsToPass;
     private int numberOfQuestions;
-    @OneToMany
+    @OneToMany(mappedBy = "quiz")
     private List<Question> qusetionsList;
 
     public Quiz() {
@@ -38,6 +38,9 @@ public class Quiz {
         this.setQusetionsList(questionsList);
         countMaxPointForQuiz();
     }
+
+
+
 
     public int getMaxPointsQuiz() {
         return maxPointsQuiz;

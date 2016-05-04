@@ -31,7 +31,7 @@ public class QuizCreatorTest {
         String expected = "Moj pierwszy Quiz";
 
         //when
-        Quiz result = quizCreator.makeQuiz();
+        Quiz result = quizCreator.creatingQuiz();
 
         //then
         assertThat(result.getQuizName()).isEqualTo(expected);
@@ -45,7 +45,7 @@ public class QuizCreatorTest {
         Quiz expected = new Quiz();
 
         //when
-        Quiz result = quizCreator.makeQuiz();
+        Quiz result = quizCreator.creatingQuiz();
 
         //then
         assertThat(result).hasSameClassAs(expected);
@@ -66,7 +66,7 @@ public class QuizCreatorTest {
         Quiz expected = new Quiz(questionList);
         expected.setQuizName("Moj pierwszy Quiz");
         //when
-        Quiz result = quizCreator.makeQuiz(questionList);
+        Quiz result = quizCreator.creatingQuiz(questionList);
 
         //then
         assertThat(result).isEqualsToByComparingFields(expected);

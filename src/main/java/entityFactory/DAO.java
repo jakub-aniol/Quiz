@@ -30,6 +30,8 @@ public class DAO {
         entityManager.persist(answer);
         entityManager.getTransaction().commit();
 
+
+
     }
 
     public static void addingDbQuestion(Question question) {
@@ -37,12 +39,15 @@ public class DAO {
         entityManager.persist(question);
         entityManager.getTransaction().commit();
 
+        //entityManager.refresh(question);
+
     }
 
     public static void addingDbQuiz(Quiz quiz) {
         entityManager.getTransaction().begin();
         entityManager.persist(quiz);
         entityManager.getTransaction().commit();
+      //  entityManager.refresh(quiz);
 
     }
 

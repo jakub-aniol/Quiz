@@ -24,8 +24,8 @@ public class Answer implements Comparable<Answer> {
     boolean isChoosen;
     @Column(name = "Czy_prawdziwa")
     boolean isProper;
-    @ManyToOne
-    @JoinColumn(name="ODP_Id")
+    @ManyToOne//(targetEntity = Question.class)
+    @JoinColumn(name="ToQuestion")
     private Question question;
 
     public Answer(){}
