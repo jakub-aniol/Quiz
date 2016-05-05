@@ -4,6 +4,7 @@ import settings.Category;
 
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -20,23 +21,52 @@ public class DataGeter {
     }
 
     public int askForInteger(String message) throws InputMismatchException {
-        int i = 0;
+        int ansNumber = 0;
         out.println(message);
-        i = scanner.nextInt();
-        return i;
-    }
+        try {
+            ansNumber = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            e.printStackTrace();
+        }
+        while (ansNumber < 1 || ansNumber > 4)
+            try {
+                System.out.println("Podaj ilość odpowiedzi pomiędzy 1 a 4");
+                ansNumber = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                e.printStackTrace();
+            }
 
-    public Category askForCategory() {
-        String strCategory;
-        strCategory = scanner.next();
-        return Category.valueOf(strCategory);
-    }
-
+    return ansNumber;
+}
     public Category askForCategory(String message) {
-        String strCategory;
-        out.println(message);
-        strCategory = scanner.next();
-        return Category.valueOf(strCategory);
+        Category category =null;
+        int numberCategory;
+        out.println("Wybierz Kategorię z podanej listy");
+        System.out.println("Podaj wartosc od 1 do "+ Arrays.asList(Category.values()).size());
+        System.out.println(Arrays.asList(Category.values()));
+        numberCategory = scanner.nextInt();
+
+        System.out.println("numberCategoty: "+numberCategory);
+        int i=Arrays.asList(Category.values()).size();
+        System.out.println("i: "+i);
+
+        while(numberCategory > i) {
+            System.out.println("podałeś złą kategorię wpisz ponownie");
+            numberCategory = scanner.nextInt();
+        }
+
+        System.out.println("lolo");
+
+        for (Category a : Category.values()) {
+            if (numberCategory == a.ordinal()+1) {
+                category = a;
+                break;
+            }
+        }
+
+        System.out.println("Wybrales: "+category.toString());
+
+        return category;
     }
 
     public String askForString(String message) {
@@ -48,13 +78,11 @@ public class DataGeter {
 
     public boolean askForBoolean(String message) {
         String str;
-        boolean isProper = true;
+        boolean isTrue = true;
         out.println(message);
         str = scanner.next();
         if (str.equals("t") || str.equals("T"))
-            return isProper;
-        return !isProper;
-
+            return isTrue;
+        return !isTrue;
     }
-
 }

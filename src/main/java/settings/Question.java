@@ -12,7 +12,6 @@ import static java.util.Collections.max;
  */
 @Entity(name = "Pytania")
 public class Question {
-    public int maxPoints;
     @Id
     @GeneratedValue
     private int Id;
@@ -20,6 +19,7 @@ public class Question {
     private Category category;
     private int numberOfAnswers;
     private boolean isMultiply;
+    public int maxPoints;
     private int gainedPoints;
     @OneToMany(mappedBy = "question")
     private List<Answer> answerList;
@@ -128,7 +128,7 @@ public class Question {
         int maxPoints = 0;
         boolean proper = true;
 
-        if (this.isMultiply() == true) {
+        if (this.isMultiply()) {
 
             for (Answer answer : this.answerList) {
                 if (answer.getIsProper() == proper)
@@ -152,7 +152,7 @@ public class Question {
         int gainedPoints = 0;
         boolean proper = true;
 
-        if (this.isMultiply() == true) {
+        if (this.isMultiply) {
 
             for (Answer answer : this.answerList) {
                 if (answer.getIsProper() == proper && answer.getChoosen() == proper)

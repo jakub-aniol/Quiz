@@ -27,20 +27,18 @@ public class Quiz {
 
     public Quiz() {
     }
+
     /**
      * Constructor, Question must have:
      * Now you can provide only Lit of question to create Quiz it is only one implementation of a constructor
      * Additionally quiz couts maxPopintsQuiz by itslef using method countMaxPointForQuiz()
-     * @param questionsList - List with objetcs Question {@link settings.Question}
      *
+     * @param questionsList - List with objetcs Question {@link settings.Question}
      */
     public Quiz(List<Question> questionsList) {
         this.setQusetionsList(questionsList);
         countMaxPointForQuiz();
     }
-
-
-
 
     public int getMaxPointsQuiz() {
         return maxPointsQuiz;
@@ -48,10 +46,6 @@ public class Quiz {
 
     public void setMaxPointsQuiz(int maxPointsQuiz) {
         this.maxPointsQuiz = maxPointsQuiz;
-    }
-
-    public void setMaxPointForQuiz(int maxPointForQuiz) {
-        this.setMaxPointsQuiz(maxPointForQuiz);
     }
 
     public String getQuizName() {
@@ -125,7 +119,7 @@ public class Quiz {
             que.countingMaxPoints();
             maxPoint += que.getMaxPoints();
         }
-        this.setMaxPointForQuiz(maxPoint);
+        this.setMaxPointsQuiz(maxPoint);
     }
 
     /**

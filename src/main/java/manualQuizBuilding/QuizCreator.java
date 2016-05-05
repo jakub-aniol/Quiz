@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import settings.Question;
 import settings.Quiz;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,39 +14,49 @@ import java.util.List;
  */
 public class QuizCreator {
     static Logger logger = Logger.getLogger(QuizCreator.class.getName());
+    DataGeter dataGeter = new DataGeter(System.in, System.out);
+    QuizBuilder quizBuilder = new QuizBuilder(new Quiz());
+    List<Question> questionsList = new ArrayList<>();
+    Quiz quiz = new Quiz();
 
     public Quiz creatingQuiz() {
 
-        Quiz quiz = new Quiz(QuizFileReader.readFileForQuestion("src/main/quiz1test"));
+        quiz = quizBuilder.addQuizName(dataGeter.askForString("Podaj nazwę Quizu"))
+                .addQuizDescription(dataGeter.askForString("Podaj opis Quizu"))
+                .addQuizAnswer(dataGeter.askForString("Podaj odpowiedź po Quizie"))
+                .addPoinsToPass(dataGeter.askForInteger("Podaj liczbę punktów do zdania"))
+                .addNumberOfQuestions(dataGeter.askForInteger("Podaj ilosc pytan w Quizie"))
+                .done();
 
+        quiz = quizBuilder.addQuestionsToList(assingQuestions(quiz)).done();
+        quiz.countMaxPointForQuiz();
 
-        logger.info("Koniec tworzenia Quizu z pliku: "+quiz.getQuizName());
+        logger.info("Koniec tworzenia Quizu z konsoli: " + quiz.getQuizName());
         DAO.addingDbQuiz(quiz);
         return quiz;
     }
 
-    public Quiz creatingQuiz(List<Question> questionsList) {
-        DataGeter dataGeter = new DataGeter(System.in, System.out);
-        Quiz quiz = new Quiz(questionsList);
+    List<Question> assingQuestions(Quiz quiz) {
+        QuestionCreator questionCreator = new QuestionCreator();
+        Question question;
+        System.out.println("Przypisuj pytania");
+        System.out.println("ilosc pytan: "+quiz.getNumberOfQuestions());
 
-        for(Question q : questionsList){
-            q.setQuiz(quiz);
+        for (int i = 0; i < quiz.getNumberOfQuestions(); i++) {
+            question = questionCreator.creatigQuestion();
+            question.setQuiz(quiz);
+            questionsList.add(question);
         }
 
-        String quizName = decideQuizName(dataGeter);
+        return questionsList;
+    }
 
+    public Quiz creatingQuiz(int i) {
 
-        logger.info("Koniec tworzenia Quizu z konsoli: "+quiz.getQuizName());
+        Quiz quiz = new Quiz(QuizFileReader.readFileForQuestion("src/main/quiz1test"));
+
+        logger.info("Koniec tworzenia Quizu z pliku: " + quiz.getQuizName());
         DAO.addingDbQuiz(quiz);
         return quiz;
     }
-
-    private String decideQuizName(DataGeter  dateGeter) {
-        String quizName = dateGeter.askForString("Wpisz nazwę quizu");
-        return quizName;
-    }
-
-
-
-
 }

@@ -66,7 +66,7 @@ public class QuizCreatorTest {
         Quiz expected = new Quiz(questionList);
         expected.setQuizName("Moj pierwszy Quiz");
         //when
-        Quiz result = quizCreator.creatingQuiz(questionList);
+        Quiz result = quizCreator.creatingQuiz();
 
         //then
         assertThat(result).isEqualsToByComparingFields(expected);

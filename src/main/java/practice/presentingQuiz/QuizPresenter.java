@@ -43,10 +43,10 @@ public class QuizPresenter {
             logger.info("Pytanie: "+que.getQuestionName());
             i++;
             System.out.println("" + i + ". " + QuestionPresenter.showQuestion(que));
-            if (que.isMultiply() == false) {
+            if (!que.isMultiply()) {
                 int n = questionAnswerer.choseSingleAnswer(dataGeter);
                 questionAnswerer.markChoosenAnswer(que, n);
-            } if(que.isMultiply() == true ){
+            } if(que.isMultiply()){
                 quizAnswerList=questionAnswerer.choseMultiplyAnswer(dataGeter);
                 questionAnswerer.markChoosenAnswer(que,quizAnswerList);
             }

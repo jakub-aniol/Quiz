@@ -2,6 +2,7 @@ package manualQuizBuilding;
 
 import settings.Answer;
 import settings.Category;
+import settings.Question;
 
 /**
  * Created by jakub on 04.05.16.
@@ -31,6 +32,11 @@ class AnswerBuilder {
 
     AnswerBuilder addIsProper(boolean isProper){
         answer.setProper(isProper);
+        return this;
+    }
+
+    AnswerBuilder addQuestion(Question question){
+        answer.setQuestion(question);
         return this;
     }
 

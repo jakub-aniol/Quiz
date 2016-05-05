@@ -1,14 +1,5 @@
 package manualQuziBuilding;
 
-import manualQuizBuilding.DataGeter;
-import manualQuizBuilding.QuestionCreator;
-import org.testng.annotations.Test;
-import settings.Category;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.stub;
-
 //import static org.mockito.Mockito.when;
 
 /**
@@ -16,7 +7,7 @@ import static org.mockito.Mockito.stub;
  */
 public class QuestionCreatorTest {
 
-    @Test
+   /* @Test
     public void testIfProperCategoryofQuestionIsReturned() {
 
         QuestionCreator questionCreator = new QuestionCreator();
@@ -65,6 +56,6 @@ public class QuestionCreatorTest {
         boolean expected = false;
         boolean result = questionCreator.setMultipilty(numberOfAnswers);
         assertThat(expected).isEqualTo(result);
-    }
+    }*/
 
 }

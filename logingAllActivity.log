@@ -1158,3 +1158,368 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'qui
 2016-05-04 16:04:28 - Odpowiedz [1, 2]
 2016-05-04 16:04:28 - Zamknięto z konsoli: null
 2016-05-04 16:04:29 - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 10:07:34 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 10:07:35 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 10:07:35 - HHH000206: hibernate.properties not found
+2016-05-05 10:07:35 - HHH000021: Bytecode provider name : javassist
+2016-05-05 10:07:35 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 10:07:36 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 10:07:36 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 10:07:36 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 10:07:36 - HHH10001003: Autocommit mode: false
+2016-05-05 10:07:36 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 10:07:37 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 10:15:34 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 10:15:34 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 10:15:34 - HHH000206: hibernate.properties not found
+2016-05-05 10:15:34 - HHH000021: Bytecode provider name : javassist
+2016-05-05 10:15:34 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 10:15:35 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 10:15:35 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 10:15:35 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 10:15:35 - HHH10001003: Autocommit mode: false
+2016-05-05 10:15:35 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 10:15:36 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 10:27:33 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 10:27:33 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 10:27:33 - HHH000206: hibernate.properties not found
+2016-05-05 10:27:33 - HHH000021: Bytecode provider name : javassist
+2016-05-05 10:27:33 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 10:27:33 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 10:27:33 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 10:27:33 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 10:27:33 - HHH10001003: Autocommit mode: false
+2016-05-05 10:27:33 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 10:27:34 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 10:37:01 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 10:37:01 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 10:37:01 - HHH000206: hibernate.properties not found
+2016-05-05 10:37:01 - HHH000021: Bytecode provider name : javassist
+2016-05-05 10:37:02 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 10:37:02 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 10:37:02 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 10:37:02 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 10:37:02 - HHH10001003: Autocommit mode: false
+2016-05-05 10:37:02 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 10:37:02 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 10:37:41 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 10:37:41 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 10:37:41 - HHH000206: hibernate.properties not found
+2016-05-05 10:37:41 - HHH000021: Bytecode provider name : javassist
+2016-05-05 10:37:41 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 10:37:41 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 10:37:41 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 10:37:41 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 10:37:41 - HHH10001003: Autocommit mode: false
+2016-05-05 10:37:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 10:37:42 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 10:50:48 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 10:50:48 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 10:50:48 - HHH000206: hibernate.properties not found
+2016-05-05 10:50:48 - HHH000021: Bytecode provider name : javassist
+2016-05-05 10:50:48 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 10:50:49 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 10:50:49 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 10:50:49 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 10:50:49 - HHH10001003: Autocommit mode: false
+2016-05-05 10:50:49 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 10:50:49 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 12:15:39 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 12:15:39 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 12:15:39 - HHH000206: hibernate.properties not found
+2016-05-05 12:15:39 - HHH000021: Bytecode provider name : javassist
+2016-05-05 12:15:39 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 12:15:40 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 12:15:40 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 12:15:40 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 12:15:40 - HHH10001003: Autocommit mode: false
+2016-05-05 12:15:40 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 12:15:40 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 12:16:49 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 12:16:49 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 12:16:49 - HHH000206: hibernate.properties not found
+2016-05-05 12:16:49 - HHH000021: Bytecode provider name : javassist
+2016-05-05 12:16:49 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 12:16:49 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 12:16:49 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 12:16:49 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 12:16:49 - HHH10001003: Autocommit mode: false
+2016-05-05 12:16:49 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 12:16:50 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 12:27:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 12:27:31 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 12:27:31 - HHH000206: hibernate.properties not found
+2016-05-05 12:27:31 - HHH000021: Bytecode provider name : javassist
+2016-05-05 12:27:31 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 12:27:31 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 12:27:31 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 12:27:31 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 12:27:31 - HHH10001003: Autocommit mode: false
+2016-05-05 12:27:31 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 12:27:32 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 12:42:07 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 12:42:08 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 12:42:08 - HHH000206: hibernate.properties not found
+2016-05-05 12:42:08 - HHH000021: Bytecode provider name : javassist
+2016-05-05 12:42:08 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 12:42:08 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 12:42:08 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 12:42:08 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 12:42:08 - HHH10001003: Autocommit mode: false
+2016-05-05 12:42:08 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 12:42:09 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 12:49:21 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 12:49:21 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 12:49:21 - HHH000206: hibernate.properties not found
+2016-05-05 12:49:21 - HHH000021: Bytecode provider name : javassist
+2016-05-05 12:49:21 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 12:49:22 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 12:49:22 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 12:49:22 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 12:49:22 - HHH10001003: Autocommit mode: false
+2016-05-05 12:49:22 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 12:49:22 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 12:50:35 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 12:50:35 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 12:50:35 - HHH000206: hibernate.properties not found
+2016-05-05 12:50:35 - HHH000021: Bytecode provider name : javassist
+2016-05-05 12:50:35 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 12:50:36 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 12:50:36 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 12:50:36 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 12:50:36 - HHH10001003: Autocommit mode: false
+2016-05-05 12:50:36 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 12:50:36 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 12:55:09 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 12:55:10 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 12:55:10 - HHH000206: hibernate.properties not found
+2016-05-05 12:55:10 - HHH000021: Bytecode provider name : javassist
+2016-05-05 12:55:10 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 12:55:10 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 12:55:10 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 12:55:10 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 12:55:10 - HHH10001003: Autocommit mode: false
+2016-05-05 12:55:10 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 12:55:11 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 12:56:14 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 12:56:15 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 12:56:15 - HHH000206: hibernate.properties not found
+2016-05-05 12:56:15 - HHH000021: Bytecode provider name : javassist
+2016-05-05 12:56:15 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 12:56:15 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 12:56:15 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 12:56:15 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 12:56:15 - HHH10001003: Autocommit mode: false
+2016-05-05 12:56:15 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 12:56:16 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 12:59:16 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 12:59:16 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 12:59:16 - HHH000206: hibernate.properties not found
+2016-05-05 12:59:16 - HHH000021: Bytecode provider name : javassist
+2016-05-05 12:59:17 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 12:59:18 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 12:59:18 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 12:59:18 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 12:59:18 - HHH10001003: Autocommit mode: false
+2016-05-05 12:59:18 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 12:59:19 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 13:01:57 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 13:01:58 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 13:01:58 - HHH000206: hibernate.properties not found
+2016-05-05 13:01:58 - HHH000021: Bytecode provider name : javassist
+2016-05-05 13:01:58 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 13:01:58 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 13:01:58 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 13:01:58 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 13:01:58 - HHH10001003: Autocommit mode: false
+2016-05-05 13:01:58 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 13:01:59 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 13:02:58 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 13:02:58 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 13:02:58 - HHH000206: hibernate.properties not found
+2016-05-05 13:02:58 - HHH000021: Bytecode provider name : javassist
+2016-05-05 13:02:58 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 13:02:59 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 13:02:59 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 13:02:59 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 13:02:59 - HHH10001003: Autocommit mode: false
+2016-05-05 13:02:59 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 13:02:59 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 13:06:10 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 13:06:11 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 13:06:11 - HHH000206: hibernate.properties not found
+2016-05-05 13:06:11 - HHH000021: Bytecode provider name : javassist
+2016-05-05 13:06:11 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 13:06:11 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 13:06:11 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 13:06:11 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 13:06:11 - HHH10001003: Autocommit mode: false
+2016-05-05 13:06:11 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 13:06:12 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 13:07:06 - Otworzono z konsoli: null
+2016-05-05 13:07:06 - Pytanie: rere
+2016-05-05 14:50:24 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 14:50:25 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 14:50:25 - HHH000206: hibernate.properties not found
+2016-05-05 14:50:25 - HHH000021: Bytecode provider name : javassist
+2016-05-05 14:50:25 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 14:50:25 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 14:50:25 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 14:50:25 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 14:50:25 - HHH10001003: Autocommit mode: false
+2016-05-05 14:50:25 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 14:50:26 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 15:01:02 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 15:01:03 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 15:01:03 - HHH000206: hibernate.properties not found
+2016-05-05 15:01:03 - HHH000021: Bytecode provider name : javassist
+2016-05-05 15:01:04 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 15:01:05 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 15:01:05 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 15:01:05 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 15:01:05 - HHH10001003: Autocommit mode: false
+2016-05-05 15:01:05 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 15:01:07 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 15:02:40 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 15:02:41 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 15:02:41 - HHH000206: hibernate.properties not found
+2016-05-05 15:02:41 - HHH000021: Bytecode provider name : javassist
+2016-05-05 15:02:42 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 15:02:44 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 15:02:44 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 15:02:44 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 15:02:44 - HHH10001003: Autocommit mode: false
+2016-05-05 15:02:44 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 15:02:45 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 15:27:39 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 15:27:39 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 15:27:39 - HHH000206: hibernate.properties not found
+2016-05-05 15:27:39 - HHH000021: Bytecode provider name : javassist
+2016-05-05 15:27:39 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 15:27:40 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 15:27:40 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 15:27:40 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 15:27:40 - HHH10001003: Autocommit mode: false
+2016-05-05 15:27:40 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 15:27:41 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 15:28:40 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 15:28:40 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 15:28:40 - HHH000206: hibernate.properties not found
+2016-05-05 15:28:40 - HHH000021: Bytecode provider name : javassist
+2016-05-05 15:28:40 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 15:28:41 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 15:28:41 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 15:28:41 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 15:28:41 - HHH10001003: Autocommit mode: false
+2016-05-05 15:28:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 15:28:41 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 15:28:54 - Otworzono z konsoli: 2
+2016-05-05 15:28:54 - Zamknięto z konsoli: 2
+2016-05-05 15:28:54 - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 15:33:59 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 15:33:59 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 15:33:59 - HHH000206: hibernate.properties not found
+2016-05-05 15:33:59 - HHH000021: Bytecode provider name : javassist
+2016-05-05 15:33:59 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 15:34:00 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 15:34:00 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 15:34:00 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 15:34:00 - HHH10001003: Autocommit mode: false
+2016-05-05 15:34:00 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 15:34:01 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 15:35:21 - Otworzono z konsoli: PierwszoNowy
+2016-05-05 15:35:21 - Zamknięto z konsoli: PierwszoNowy
+2016-05-05 15:35:21 - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 15:38:18 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 15:38:18 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 15:38:18 - HHH000206: hibernate.properties not found
+2016-05-05 15:38:18 - HHH000021: Bytecode provider name : javassist
+2016-05-05 15:38:18 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 15:38:19 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 15:38:19 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 15:38:19 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 15:38:19 - HHH10001003: Autocommit mode: false
+2016-05-05 15:38:19 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 15:38:19 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 15:38:42 - Otworzono z konsoli: wewe
+2016-05-05 15:38:42 - Zamknięto z konsoli: wewe
+2016-05-05 15:38:42 - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 15:41:57 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 15:41:57 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 15:41:57 - HHH000206: hibernate.properties not found
+2016-05-05 15:41:57 - HHH000021: Bytecode provider name : javassist
+2016-05-05 15:41:57 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 15:41:58 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 15:41:58 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 15:41:58 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 15:41:58 - HHH10001003: Autocommit mode: false
+2016-05-05 15:41:58 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 15:41:59 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-05-05 15:42:11 - Otworzono z konsoli: e
+2016-05-05 15:42:11 - Zamknięto z konsoli: e
+2016-05-05 15:42:11 - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 15:44:22 - HHH000204: Processing PersistenceUnitInfo [
+	name: quiz
+	...]
+2016-05-05 15:44:22 - HHH000412: Hibernate Core {5.1.0.Final}
+2016-05-05 15:44:22 - HHH000206: hibernate.properties not found
+2016-05-05 15:44:22 - HHH000021: Bytecode provider name : javassist
+2016-05-05 15:44:22 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-05-05 15:44:22 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-05-05 15:44:22 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/quiz]
+2016-05-05 15:44:23 - HHH10001001: Connection properties: {useUnicode=true, user=quiz, password=****, characterEncoding=UTF-8}
+2016-05-05 15:44:23 - HHH10001003: Autocommit mode: false
+2016-05-05 15:44:23 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-05-05 15:44:23 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect

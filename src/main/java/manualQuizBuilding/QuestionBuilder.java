@@ -1,5 +1,6 @@
 package manualQuizBuilding;
 
+import settings.Category;
 import settings.Question;
 
 import java.util.List;
@@ -15,18 +16,12 @@ class QuestionBuilder {
         this.question = q;
     }
 
-    // addQuestionName
-    // list of answers
-    // points (counted from answers)
-    //is multiply
-    //category
-
     QuestionBuilder addQuestionName(String name) {
         question.setQuestionName(name);
         return this;
     }
 
-    QuestionBuilder addAnswerToQuestion(List answersList) {
+    QuestionBuilder addAnswersToQuestion(List <settings.Answer>answersList) {
         question.setAnswerList(answersList);
         return this;
     }
@@ -41,8 +36,13 @@ class QuestionBuilder {
         return this;
     }
 
-    QuestionBuilder addNumberOfAbswers(int numberOfAnswers){
+    QuestionBuilder addNumberOfAnswers(int numberOfAnswers){
         question.setNumberOfAnswers(numberOfAnswers);
+        return this;
+    }
+
+    QuestionBuilder addCategory(Category category){
+        this.question.setCategory(category);
         return this;
     }
 
