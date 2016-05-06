@@ -1,7 +1,6 @@
 package manualQuziBuilding;
 
 import manualQuizBuilding.QuizCreator;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import settings.Answer;
 import settings.Category;
@@ -17,11 +16,6 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Created by ja on 01.05.16.
  */
 public class QuizCreatorTest {
-
-    @BeforeTest
-    public void setUp() {
-
-    }
 
     @Test
     public void testIfQuizHasProperName() {

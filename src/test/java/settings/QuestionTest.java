@@ -13,11 +13,9 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class QuestionTest {
 
-    public Question question1;
-    public Question question2;
-
-    List<Answer> answerList1 = new ArrayList<>();
-
+    private Question question1;
+    private Question question2;
+    private final List<Answer> answerList1 = new ArrayList<>();
     public List<Answer> getAnswerList1() {
         return answerList1;
     }

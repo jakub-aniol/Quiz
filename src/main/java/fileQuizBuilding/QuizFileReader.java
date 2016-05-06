@@ -37,7 +37,7 @@ public class QuizFileReader {
                 if (line.startsWith("?")) {
                     numberOFAnswers = getNumberOFAnswers(line);
                     enCategory = Category.valueOf(line.substring(line.indexOf('%') + 1, line.indexOf('#') - 1));
-                    isQuestionMultiply = new Boolean(line.substring(line.indexOf('*') + 1));
+                    isQuestionMultiply = Boolean.valueOf(line.substring(line.indexOf('*') + 1));
                     questionName = line.substring(1, line.indexOf('%'));
 
                     answerList = new ArrayList<>();
@@ -49,7 +49,7 @@ public class QuizFileReader {
                     answerName = line.substring(line.indexOf("!") + 1, line.indexOf("%") - 1);
                     enCategory = Category.valueOf(line.substring(line.indexOf('%') + 1, line.indexOf('^') - 1));
                     pointsByAnwser = Integer.parseInt(line.substring(line.indexOf("^") + 1, line.indexOf("*") - 1));
-                    isAnswerCorrect = new Boolean(line.substring(line.indexOf('*') + 1));
+                    isAnswerCorrect = Boolean.valueOf(line.substring(line.indexOf('*') + 1));
 
                     answer = Answer.createAnswer(answerName, enCategory, pointsByAnwser, isAnswerCorrect);
                     answerList.add(answer);
@@ -59,8 +59,8 @@ public class QuizFileReader {
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch(IOException a){
+            a.printStackTrace();
         }
     return questionList;
     }

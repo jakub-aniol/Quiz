@@ -13,15 +13,14 @@ import java.util.List;
  * Created by jakub on 19.04.16.
  */
 public class QuizCreator {
-    static Logger logger = Logger.getLogger(QuizCreator.class.getName());
-    DataGeter dataGeter = new DataGeter(System.in, System.out);
-    QuizBuilder quizBuilder = new QuizBuilder(new Quiz());
-    List<Question> questionsList = new ArrayList<>();
-    Quiz quiz = new Quiz();
+    private static final Logger logger = Logger.getLogger(QuizCreator.class.getName());
+    private final DataGeter dataGeter = new DataGeter(System.in);
+    private final QuizBuilder quizBuilder = new QuizBuilder(new Quiz());
+    private final List<Question> questionsList = new ArrayList<>();
 
     public Quiz creatingQuiz() {
 
-        quiz = quizBuilder.addQuizName(dataGeter.askForString("Podaj nazwę Quizu"))
+        Quiz quiz = quizBuilder.addQuizName(dataGeter.askForString("Podaj nazwę Quizu"))
                 .addQuizDescription(dataGeter.askForString("Podaj opis Quizu"))
                 .addQuizAnswer(dataGeter.askForString("Podaj odpowiedź po Quizie"))
                 .addPoinsToPass(dataGeter.askForInteger("Podaj liczbę punktów do zdania"))

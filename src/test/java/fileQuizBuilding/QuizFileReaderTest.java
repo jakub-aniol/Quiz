@@ -16,15 +16,11 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class QuizFileReaderTest {
 
-    SoftAssert softAssert = new SoftAssert();
+    private final SoftAssert softAssert = new SoftAssert();
 
     @Test
     public void testiIfListOfQuestionsIsReturned() {
-
-        QuizFileReader quizFileReader = new QuizFileReader();
-
         List<Question> t = new ArrayList<>();
-
         assertThat(QuizFileReader.readFileForQuestion("src/test/quiz1test")).hasSameClassAs(t);
 
     }
@@ -32,7 +28,6 @@ public class QuizFileReaderTest {
     @Test
     public void testIfListOfQuestionContainsProperQuestionsValue() {
         //given
-        QuizFileReader quizFileReader = new QuizFileReader();
         List<Question> list;
         list = QuizFileReader.readFileForQuestion("src/test/quiz1test");
 
@@ -64,8 +59,6 @@ public class QuizFileReaderTest {
     @Test
     public void testIfListOfQuestionContainsProperAnswersValue() {
         //given
-
-        QuizFileReader quizFileReader = new QuizFileReader();
         List<Question> list;
         list = QuizFileReader.readFileForQuestion("src/test/quiz1test");
 

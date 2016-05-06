@@ -8,9 +8,9 @@ import settings.Category;
 /**
  * Created by jakub on 18.04.16.
  */
-public class AnswerCreator {
-    static Logger logger = Logger.getLogger(AnswerCreator.class);
-    DataGeter dataGeter = new DataGeter(System.in, System.out);
+class AnswerCreator {
+    private static final Logger logger = Logger.getLogger(AnswerCreator.class);
+    private final DataGeter dataGeter = new DataGeter(System.in);
 
     public Answer creatingAnswer(Category category) {
         AnswerBuilder answerBuilder = new AnswerBuilder(new Answer());

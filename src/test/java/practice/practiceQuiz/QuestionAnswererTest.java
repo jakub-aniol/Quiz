@@ -5,7 +5,6 @@ import manualQuizBuilding.DataGeter;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
-import java.util.TreeSet;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
@@ -40,8 +39,7 @@ public class QuestionAnswererTest {
         //given
         QuestionAnswerer questionAnswerer = new QuestionAnswerer();
         DataGeter mockDataGeter = mock(DataGeter.class);
-        TreeSet<Integer> tResult;
-        ArrayList<Integer> result = new ArrayList<>();
+        ArrayList<Integer> result;
         int answer = 1;
         stub(mockDataGeter.askForInteger("Podaj liczbe w przedziale " + MIN_ANSWER + " do " + MAX_ANSWER)).toReturn(answer);
         //when

@@ -15,9 +15,9 @@ import java.util.TreeSet;
  * Since 2016-04-30.
  */
 public class QuestionAnswerer {
-    static Logger logger = Logger.getLogger(QuestionAnswerer.class);
-    final int MIN_ANSWER = 1;
-    final int MAX_ANSWER = 4;
+    private static final Logger logger = Logger.getLogger(QuestionAnswerer.class);
+    private final int MIN_ANSWER = 1;
+    private final int MAX_ANSWER = 4;
 
     /**
      * Method allowing to choose in singel answer questions answer by putting number by typing a keyboard
@@ -45,17 +45,17 @@ public class QuestionAnswerer {
      */
 
     public ArrayList<Integer> choseMultiplyAnswer(DataGeter dataGeter) {
-
-        int chosenNumber = dataGeter.askForInteger("Podaj liczbe w przedziale " + MIN_ANSWER + " do " + MAX_ANSWER);
         ArrayList<Integer> listOdp = new ArrayList<>();
         TreeSet<Integer> treeSetOdp = new TreeSet<>();
+        int chosenNumber = dataGeter.askForInteger("Podaj liczbe w przedziale " + MIN_ANSWER + " do " + MAX_ANSWER);
 
         while (chosenNumber != 0){
             if (chosenNumber > 0) {
                 treeSetOdp.add(chosenNumber);
-                chosenNumber = dataGeter.askForInteger("Jeśli chcesz wskazać kolejną pozycję wpisza numer odpowiedzi, nie powtarzaj odpowiedzi");
             }
-            System.out.println("Aby zakończyć kliknij '0'/zero");
+            System.out.println("Podaj liczbe w przedziale " + MIN_ANSWER + " do " + MAX_ANSWER);
+            chosenNumber = dataGeter.askForInteger("Jeśli chcesz wskazać kolejną pozycję wpisza numer odpowiedzi, nie powtarzaj odpowiedzi\nAby zakończyć kliknij '0'/zero");
+            //System.out.println("Aby zakończyć kliknij '0'/zero");
         }
         listOdp.addAll(treeSetOdp);
         logger.info("Odpowiedz " + treeSetOdp);

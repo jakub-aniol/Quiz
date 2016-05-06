@@ -10,7 +10,7 @@ import java.util.List;
  */
 class QuizBuilder {
 
-    private Quiz quiz;
+    private final Quiz quiz;
 
     QuizBuilder(Quiz quiz){
         this.quiz = quiz;

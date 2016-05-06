@@ -14,8 +14,8 @@ import java.util.List;
  * Since 2016-04-30.
  */
 public class QuizPresenter {
-    static Logger logger = Logger.getLogger(QuizPresenter.class);
-    DataGeter dataGeter = new DataGeter(System.in, System.out);
+    private static final Logger logger = Logger.getLogger(QuizPresenter.class);
+    private final DataGeter dataGeter = new DataGeter(System.in);
     /**
      * Metchod for presenting Quiz
      * @param quiz {@link settings.Quiz}
@@ -24,6 +24,7 @@ public class QuizPresenter {
         List<Question> quizQuestionList;
         quizQuestionList = quiz.getQuestionList();
         int i = 0;
+        System.out.println(quiz.getQuizName());
         for (Question que : quizQuestionList) {
             i++;
             System.out.println("" + i + ". " + QuestionPresenter.showQuestion(que));
@@ -39,6 +40,7 @@ public class QuizPresenter {
         List<Integer> quizAnswerList;
         quizQuestionList = quiz.getQuestionList();
         int i = 0;
+        System.out.println(quiz.getQuizName());
         for (Question que : quizQuestionList) {
             logger.info("Pytanie: "+que.getQuestionName());
             i++;
@@ -49,6 +51,7 @@ public class QuizPresenter {
             } if(que.isMultiply()){
                 quizAnswerList=questionAnswerer.choseMultiplyAnswer(dataGeter);
                 questionAnswerer.markChoosenAnswer(que,quizAnswerList);
+                System.out.println("roor    ");
             }
         }
     }
@@ -56,13 +59,14 @@ public class QuizPresenter {
      * Metchod for presenting Quiz to with the result and maximum points possible to gain
      * @param quiz {@link settings.Quiz}
      */
-    public static void showQuizWithResults(Quiz quiz) {
+    public void showQuizWithResults(Quiz quiz) {
 
         List<Question> quizQuestionList;
         quizQuestionList = quiz.getQuestionList();
 
         int points = 0;
         int i = 0;
+        System.out.println(quiz.getQuizName());
         for (Question que : quizQuestionList) {
             i++;
             System.out.println("" + i + ". " + QuestionPresenter.showQuestion(que));

@@ -21,7 +21,7 @@ public class Question {
     private boolean isMultiply;
     public int maxPoints;
     private int gainedPoints;
-    @OneToMany(mappedBy = "question")
+    @OneToMany(mappedBy = "question", fetch = FetchType.LAZY)
     private List<Answer> answerList;
     @ManyToOne
     //@JoinColumn(name="Quiz_ID")
@@ -168,11 +168,18 @@ public class Question {
         }
     }
 
+    public String showQuestion(){
+        String str = "";
+        str+=this.questionName;
+       /* str+='\n';
+        str+=this.answerList;*/
+        return str;
+    }
 
     @Override
     public String toString() {
         String strReturn = "\n";
-        strReturn += this.questionName + " " + this.maxPoints;
+        strReturn += this.questionName;
         strReturn += "\n";
         strReturn += this.answerList;
         return strReturn;

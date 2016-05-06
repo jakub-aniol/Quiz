@@ -3,7 +3,7 @@ package manualQuziBuilding;
 /**
  * Created by jakub on 02.05.16.
  */
-public class AnswerCreatorTest {
+class AnswerCreatorTest {
 
     /*@Test
     public void testIfProperNameOfAnswerIsReturned() {

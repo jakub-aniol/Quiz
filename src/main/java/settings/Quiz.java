@@ -31,9 +31,9 @@ public class Quiz {
     /**
      * Constructor, Question must have:
      * Now you can provide only Lit of question to create Quiz it is only one implementation of a constructor
-     * Additionally quiz couts maxPopintsQuiz by itslef using method countMaxPointForQuiz()
+     * Additionally quiz couts maxPopintsQuiz by itself using method countMaxPointForQuiz()
      *
-     * @param questionsList - List with objetcs Question {@link settings.Question}
+     * @param questionsList - List with objects Question {@link settings.Question}
      */
     public Quiz(List<Question> questionsList) {
         this.setQusetionsList(questionsList);
@@ -100,7 +100,7 @@ public class Quiz {
         this.numberOfQuestions = numberOfQuestions;
     }
 
-    public List<Question> getQusetionsList() {
+    List<Question> getQusetionsList() {
         return qusetionsList;
     }
 

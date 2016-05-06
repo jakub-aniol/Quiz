@@ -19,7 +19,6 @@ public class QuestionPresenterTest {
 
     @Test
     public void testIfProperStringisReturned(){
-        QuestionPresenter questionPresenter = new QuestionPresenter();
 
         Answer answer = Answer.createAnswer("Pytanie", Category.GIT, 2, true);
         Question mockQuestion = mock(Question.class);

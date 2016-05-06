@@ -14,19 +14,19 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class QuizTest {
 
-    Answer answer1e = Answer.createAnswer("Pytanie1", Category.SQL, 2, true);
-    Answer answer2e = Answer.createAnswer("Pytanie2", Category.SQL, 3, true);
-    Answer answer3e = Answer.createAnswer("Pytanie3", Category.SQL, 4, true);
+    private final Answer answer1e = Answer.createAnswer("Pytanie1", Category.SQL, 2, true);
+    private final Answer answer2e = Answer.createAnswer("Pytanie2", Category.SQL, 3, true);
+    private final Answer answer3e = Answer.createAnswer("Pytanie3", Category.SQL, 4, true);
 
-    List<Answer> listAnswersT = new ArrayList<>();
-    List<Answer> listAnswersF = new ArrayList<>();
+    private final List<Answer> listAnswersT = new ArrayList<>();
+    private final List<Answer> listAnswersF = new ArrayList<>();
 
-    Question quest1 = new Question("Wielokrotne", Category.GIT, true, 2, listAnswersT);
-    Question quest2 = new Question("Wielokrotne", Category.GIT, true, 2, listAnswersF);
-    Question quest3 = new Question("Jednokrotne", Category.GIT, false, 2, listAnswersT);
-    Question quest4 = new Question("Jednokrotne", Category.GIT, false, 2, listAnswersF);
+    private final Question quest1 = new Question("Wielokrotne", Category.GIT, true, 2, listAnswersT);
+    private final Question quest2 = new Question("Wielokrotne", Category.GIT, true, 2, listAnswersF);
+    private final Question quest3 = new Question("Jednokrotne", Category.GIT, false, 2, listAnswersT);
+    private final Question quest4 = new Question("Jednokrotne", Category.GIT, false, 2, listAnswersF);
 
-    List<Question> listQuestions = new ArrayList<>();
+    private final List<Question> listQuestions = new ArrayList<>();
 
     {
         listAnswersT.add(answer1e);
@@ -58,7 +58,7 @@ public class QuizTest {
         Quiz quiz = new Quiz(listQuestions);
         int expected = 19;
         //when
-        int result = 0;
+        int result;
         quiz.countMaxPointForQuiz();
         result = quiz.getMaxPointsQuiz();
         //then

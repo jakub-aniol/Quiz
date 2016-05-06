@@ -10,8 +10,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Created by jakub on 21.04.16.
  */
 public class AnswerTest {
-    static public Answer answer1e = Answer.createAnswer("Pytanie1", Category.SQL, 2, true);
-    static public Answer answer2e = Answer.createAnswer("Pytanie1", Category.SQL, 3, false);
+    private static Answer answer1e = Answer.createAnswer("Pytanie1", Category.SQL, 2, true);
+    private static Answer answer2e = Answer.createAnswer("Pytanie1", Category.SQL, 3, false);
     private Answer answer3e;
     private Answer answer4e;
     private Answer answer1n;

@@ -5,7 +5,7 @@ package manualQuziBuilding;
 /**
  * Created by ja on 01.05.16.
  */
-public class QuestionCreatorTest {
+class QuestionCreatorTest {
 
    /* @Test
     public void testIfProperCategoryofQuestionIsReturned() {

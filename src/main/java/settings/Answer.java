@@ -8,22 +8,24 @@ import javax.persistence.*;
  * Since 2016-04-30.
  *
  */
+@SuppressWarnings("WeakerAccess")
 @Entity
 @Table(name = "Odpowiedzi")
 public class Answer implements Comparable<Answer> {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int ID;
+
     @Column(name = "Odpowiedź")
-    String answerName;
+    private String answerName;
     @Enumerated(EnumType.STRING)
-    Category category;
+    private Category category;
     @Column(name = "Ilosc_punktow")
-    int answerPoints;
+    private int answerPoints;
     @Column(name = "Czy_wybrana")
-    boolean isChoosen;
+    private boolean isChoosen;
     @Column(name = "Czy_prawdziwa")
-    boolean isProper;
+    private boolean isProper;
     @ManyToOne//(targetEntity = Question.class)
     @JoinColumn(name="ToQuestion")
     private Question question;
@@ -38,7 +40,7 @@ public class Answer implements Comparable<Answer> {
      * @param isProper - if an answer is proper regarding to the question
      *
      */
-    public Answer(String answerName, Category category, int answerPoints, boolean isProper) {
+    private Answer(String answerName, Category category, int answerPoints, boolean isProper) {
         this.answerName = answerName;
         this.category = category;
         this.answerPoints = answerPoints;
@@ -65,7 +67,7 @@ public class Answer implements Comparable<Answer> {
         return this.isChoosen;
     }
 
-    public int getID() {
+    private int getID() {
         return ID;
     }
 
@@ -124,7 +126,7 @@ public class Answer implements Comparable<Answer> {
     public String toString() {
         String strReturn ="";
         strReturn += this.answerName;
-        strReturn += "  " +this.answerPoints+ "   "+this.isChoosen;
+       // strReturn += "  " +this.answerPoints+ "   "+this.isChoosen;
         strReturn +="\n";
 
         return strReturn;

@@ -15,9 +15,9 @@ public class DataGeter {
     private final Scanner scanner;
     private final PrintStream out;
 
-    public DataGeter(InputStream in, PrintStream out) {
+    public DataGeter(InputStream in) {
         scanner = new Scanner(in);
-        this.out = out;
+        this.out = System.out;
     }
 
     public int askForInteger(String message) throws InputMismatchException {
@@ -28,13 +28,6 @@ public class DataGeter {
         } catch (InputMismatchException e) {
             e.printStackTrace();
         }
-        while (ansNumber < 1 || ansNumber > 4)
-            try {
-                System.out.println("Podaj ilość odpowiedzi pomiędzy 1 a 4");
-                ansNumber = scanner.nextInt();
-            } catch (InputMismatchException e) {
-                e.printStackTrace();
-            }
 
     return ansNumber;
 }
@@ -64,6 +57,7 @@ public class DataGeter {
             }
         }
 
+        assert category != null;
         System.out.println("Wybrales: "+category.toString());
 
         return category;

@@ -5,20 +5,18 @@ import org.apache.log4j.Logger;
 import settings.Answer;
 import settings.Question;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by jakub on 18.04.16.
  */
 
-public class QuestionCreator {
+class QuestionCreator {
 
-    final static Logger logger = Logger.getLogger(QuestionCreator.class.getName());
+    private final static Logger logger = Logger.getLogger(QuestionCreator.class.getName());
 
     public Question creatigQuestion() {
-        DataGeter dataGeter = new DataGeter(System.in, System.out);
-        List<Answer> answerList = new ArrayList<>();
+        DataGeter dataGeter = new DataGeter(System.in);
         QuestionBuilder questionBuilder = new QuestionBuilder(new Question());
         Question question = null;
 
