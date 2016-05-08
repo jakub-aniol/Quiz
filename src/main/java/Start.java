@@ -1,47 +1,50 @@
 import entityFactory.DAO;
+import manualQuizBuilding.DataGeter;
 import manualQuizBuilding.QuizCreator;
 import org.apache.log4j.Logger;
 import practice.presentingQuiz.QuizPresenter;
+import settings.ChoosenQuiz;
 import settings.Quiz;
 
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * Created by jakub on 18.04.16.
  */
 public class Start {
     private final static Logger logger = Logger.getLogger(Start.class);
-    private static final Scanner scanner = new Scanner(System.in);
+    private static final DataGeter dataGeter = new DataGeter(System.in);
     private static final QuizCreator quizCreator = new QuizCreator();
     private static final QuizPresenter quizPresenter = new QuizPresenter();
 
+
     public static void main(String[] args) {
 
-        int i;
-        System.out.println("Wybierz opcję");
+        int opcja;
         System.out.println("Wczytaj ankietę z pliku, wpisz 1");
         System.out.println("Wczytaj ankietę z bazy, wpisz 2");
         System.out.println("Wpisz ankietę w kreatorze, wpisz 3");
-        i = scanner.nextInt();
-        System.out.println("Wybrales: " + i);
+        opcja = dataGeter.askForInteger("Wybierz opcję");
+        System.out.println("Wybrales: " + opcja);
 
-        if (i == 1) {
+        if (opcja == 1) {
 
-            Quiz quiz = quizCreator.creatingQuiz(i);
-            logger.info("Otworzono z pliku: " + quiz.getQuizName());
-            quizPresenter.showQuizToPractice(quiz);
+            Quiz quiz = quizCreator.creatingQuiz(opcja);
+            ChoosenQuiz choosenQuiz = new ChoosenQuiz(quiz);
+            logger.info("Otworzono z pliku: " + choosenQuiz.getQuizName());
+            quizPresenter.showQuizToPractice(choosenQuiz);
             logger.info("Zamknieto z pliku: " + quiz.getQuizName());
-            quizPresenter.showQuizWithResults(quiz);
+            quizPresenter.showQuizWithResults(choosenQuiz);
 
-        } else if (i == 2) {
+        } else if (opcja == 2) {
 
             DAO.openFactory();
 
             List<Quiz> quizesList = DAO.getQuiz();
             for (Quiz q : quizesList) {
-                quizPresenter.showQuizToPractice(q);
-                quizPresenter.showQuizWithResults(q);
+                ChoosenQuiz choosenQuiz = new ChoosenQuiz(q);
+                quizPresenter.showQuizToPractice(choosenQuiz);
+                quizPresenter.showQuizWithResults(choosenQuiz);
             }
 
             DAO.closeFactory();
@@ -50,14 +53,21 @@ public class Start {
 
             DAO.openFactory();
 
-            Quiz quizDb = quizCreator.creatingQuiz();
+            Quiz quiz = quizCreator.creatingQuiz();
 
-            logger.info("Otworzono z konsoli: " + quizDb.getQuizName());
-            quizPresenter.showQuizToPractice(quizDb);
-            logger.info("Zamknięto z konsoli: " + quizDb.getQuizName());
-            quizPresenter.showQuizWithResults(quizDb);
+            System.out.println("###################### " + quiz);
+
+            ChoosenQuiz choosenQuiz = quizCreator.creatingChoosenQuiz(quiz);
+
+            System.out.println("###################### " + choosenQuiz);
+
+            logger.info("Otworzono z konsoli: " + choosenQuiz.getQuizName());
+            quizPresenter.showQuizToPractice(choosenQuiz);
+            logger.info("Zamknięto z konsoli: " + choosenQuiz.getQuizName());
+            quizPresenter.showQuizWithResults(choosenQuiz);
 
             DAO.closeFactory();
         }
     }
 }
+

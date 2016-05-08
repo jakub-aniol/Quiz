@@ -1,9 +1,7 @@
 package settings;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,6 +10,7 @@ import java.util.List;
  * Since 2016-04-30.
  */
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Quiz {
     @Id
     @GeneratedValue
@@ -22,10 +21,21 @@ public class Quiz {
     private int maxPointsQuiz;
     private int pointsToPass;
     private int numberOfQuestions;
-    @OneToMany(mappedBy = "quiz")
+    @OneToMany(mappedBy = "quiz", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private List<Question> qusetionsList;
 
+
     public Quiz() {
+    }
+
+    public Quiz(Quiz quiz) {
+        this.quizName=quiz.quizName;
+        this.quizDescription=quiz.quizDescription;
+        this.answerAfterPassing=quiz.answerAfterPassing;
+        this.maxPointsQuiz=quiz.maxPointsQuiz;
+        this.pointsToPass=quiz.pointsToPass;
+        this.numberOfQuestions=quiz.numberOfQuestions;
+        this.qusetionsList=new ArrayList<>(quiz.qusetionsList);
     }
 
     /**
@@ -122,27 +132,6 @@ public class Quiz {
         this.setMaxPointsQuiz(maxPoint);
     }
 
-    /**
-     * Method for counting points one got for a quiz
-     * if Answer param isPorper is established to true and answer is matched as choosen it added points one geins while doing quiz.
-     *
-     * @param quiz {@link settings.Quiz}
-     * @return int
-     */
-    public int countingGainedPoints(Quiz quiz) {
-        boolean choosen = true;
-        int getherPoints = 0;
-
-        for (Question ques : quiz.getQuestionList())
-            for (Answer ans : ques.getAnswerList()) {
-                if (ans.getChoosen() == choosen) {
-                    if (ans.getIsProper() == ans.getIsProper()) {
-                        getherPoints += ans.getAnswerPoints();
-                    }
-                }
-            }
-        return getherPoints;
-    }
 
 
     public String toString() {

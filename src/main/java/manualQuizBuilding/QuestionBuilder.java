@@ -12,6 +12,8 @@ class QuestionBuilder {
 
     private Question question = new Question();
 
+    QuestionBuilder(){}
+
     QuestionBuilder(Question q) {
         this.question = q;
     }
@@ -27,7 +29,7 @@ class QuestionBuilder {
     }
 
     QuestionBuilder addIsMultiply(boolean isMultiply){
-        question.setMultiply(isMultiply);
+        question.setIsMultiply(isMultiply);
         return this;
     }
 

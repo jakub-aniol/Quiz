@@ -4,6 +4,7 @@ import entityFactory.DAO;
 import org.apache.log4j.Logger;
 import settings.Answer;
 import settings.Category;
+import settings.ChoosenAnswer;
 
 /**
  * Created by jakub on 18.04.16.
@@ -20,9 +21,19 @@ class AnswerCreator {
                 .addIsProper(dataGeter.askForBoolean("Czy odpowiedź jest prawdziwa? Jeśli tak wpisz T, w przeciwnym razie będzie fałszywa"))
                 .done();
 
-        DAO.addingDbAnswer(answer);
+        // DAO.addingDbAnswer(answer);
         logger.info("Dodana odpowiedź: " + answer.getAnswerName());
 
         return answer;
+    }
+
+    public ChoosenAnswer creatingChoosenAnswer(Answer answer) {
+        ChoosenAnswer choosenAnswer = new ChoosenAnswer(answer);
+        ChoosenAnswerBuilder choosenAnswerBuilder = new ChoosenAnswerBuilder();
+        choosenAnswer = choosenAnswerBuilder.addChoosenAnswer(choosenAnswer.getChoosen()).done();
+
+        DAO.addingDbAnswer(choosenAnswer);
+
+        return choosenAnswer;
     }
 }

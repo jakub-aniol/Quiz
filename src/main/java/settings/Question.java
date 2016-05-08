@@ -1,6 +1,7 @@
 package settings;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Collections.max;
@@ -11,6 +12,7 @@ import static java.util.Collections.max;
  * Since 2016-04-30.
  */
 @Entity(name = "Pytania")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Question {
     @Id
     @GeneratedValue
@@ -20,14 +22,24 @@ public class Question {
     private int numberOfAnswers;
     private boolean isMultiply;
     public int maxPoints;
-    private int gainedPoints;
-    @OneToMany(mappedBy = "question", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "question", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private List<Answer> answerList;
     @ManyToOne
     //@JoinColumn(name="Quiz_ID")
     private Quiz quiz;
 
     public Question() {
+    }
+
+    public Question(Question question){
+        this.Id=question.Id;
+        this.questionName = question.questionName;
+        this.category = question.category;
+        this.numberOfAnswers=question.numberOfAnswers;
+        this.isMultiply=question.isMultiply;
+        this.maxPoints=question.maxPoints;
+        this.answerList=new ArrayList<>(answerList);
+      //  this.quiz=question.quiz;
     }
 
     /**
@@ -47,11 +59,11 @@ public class Question {
         this.answerList = answersList;
     }
 
-    public boolean isMultiply() {
+    public boolean getIsMultiply() {
         return isMultiply;
     }
 
-    public void setMultiply(boolean multiply) {
+    public void setIsMultiply(boolean multiply) {
         isMultiply = multiply;
     }
 
@@ -69,14 +81,6 @@ public class Question {
 
     public void setMaxPoints(int maxPoints) {
         this.maxPoints = maxPoints;
-    }
-
-    public int getGainedPoints() {
-        return gainedPoints;
-    }
-
-    public void setGainedPoints(int gainedPoints) {
-        this.gainedPoints = gainedPoints;
     }
 
     public String getQuestionName() {
@@ -128,7 +132,7 @@ public class Question {
         int maxPoints = 0;
         boolean proper = true;
 
-        if (this.isMultiply()) {
+        if (this.getIsMultiply()) {
 
             for (Answer answer : this.answerList) {
                 if (answer.getIsProper() == proper)
@@ -142,33 +146,9 @@ public class Question {
         }
     }
 
-    /**
-     * Method for counting points one got for a question
-     * For single question answer if its param isPorper is established to true and answer is matched as choosen
-     * For multiply question answer ads each answer points if its param isPorper is established to true and answer is matched as choosen
-     */
 
-    public void countingGainedPoints() {
-        int gainedPoints = 0;
-        boolean proper = true;
 
-        if (this.isMultiply) {
-
-            for (Answer answer : this.answerList) {
-                if (answer.getIsProper() == proper && answer.getChoosen() == proper)
-                    gainedPoints += answer.getAnswerPoints();
-            }
-            this.setGainedPoints(gainedPoints);
-
-        } else {
-            Answer answer = max(this.answerList);
-            if (answer.getIsProper() == proper && answer.getChoosen() == proper)
-                gainedPoints = answer.getAnswerPoints();
-            this.setGainedPoints(gainedPoints);
-        }
-    }
-
-    public String showQuestion(){
+   public String showQuestion(){
         String str = "";
         str+=this.questionName;
        /* str+='\n';

@@ -3,6 +3,7 @@ package manualQuizBuilding;
 import entityFactory.DAO;
 import fileQuizBuilding.QuizFileReader;
 import org.apache.log4j.Logger;
+import settings.ChoosenQuiz;
 import settings.Question;
 import settings.Quiz;
 
@@ -15,10 +16,10 @@ import java.util.List;
 public class QuizCreator {
     private static final Logger logger = Logger.getLogger(QuizCreator.class.getName());
     private final DataGeter dataGeter = new DataGeter(System.in);
-    private final QuizBuilder quizBuilder = new QuizBuilder(new Quiz());
-    private final List<Question> questionsList = new ArrayList<>();
+
 
     public Quiz creatingQuiz() {
+        QuizBuilder quizBuilder = new QuizBuilder(new Quiz());
 
         Quiz quiz = quizBuilder.addQuizName(dataGeter.askForString("Podaj nazwę Quizu"))
                 .addQuizDescription(dataGeter.askForString("Podaj opis Quizu"))
@@ -27,16 +28,33 @@ public class QuizCreator {
                 .addNumberOfQuestions(dataGeter.askForInteger("Podaj ilosc pytan w Quizie"))
                 .done();
 
-        quiz = quizBuilder.addQuestionsToList(assingQuestions(quiz)).done();
-        quiz.countMaxPointForQuiz();
+        DAO.addingDbQuiz(quiz);
+
+        Quiz quiz2 = quizBuilder.addQuestionsToList(assingQuestions(quiz)).done();
+        quiz2.countMaxPointForQuiz();
+
+        DAO.addingDbQuiz(quiz2);
 
         logger.info("Koniec tworzenia Quizu z konsoli: " + quiz.getQuizName());
-        DAO.addingDbQuiz(quiz);
-        return quiz;
+        return quiz2;
+    }
+
+    public ChoosenQuiz creatingChoosenQuiz(Quiz quiz){
+
+        ChoosenQuiz choosenQuiz;
+
+        ChoosenQuizBuilder choosenQuizBuilder = new ChoosenQuizBuilder(new ChoosenQuiz(quiz));
+        choosenQuiz = choosenQuizBuilder.addChoosenQuizUserName(dataGeter.askForString("Podaj swoje imię"))
+                .addChoosenQuizUserLastName(dataGeter.askForString("Podaj swoje nazwisko")).done();
+
+        DAO.addingDbQuiz(choosenQuiz);
+        return choosenQuiz;
     }
 
     List<Question> assingQuestions(Quiz quiz) {
+        List<Question> questionsList = new ArrayList<>();
         QuestionCreator questionCreator = new QuestionCreator();
+        QuestionCreator questionCreator2 = new QuestionCreator();
         Question question;
         System.out.println("Przypisuj pytania");
         System.out.println("ilosc pytan: "+quiz.getNumberOfQuestions());
@@ -55,7 +73,7 @@ public class QuizCreator {
         Quiz quiz = new Quiz(QuizFileReader.readFileForQuestion("src/main/quiz1test"));
 
         logger.info("Koniec tworzenia Quizu z pliku: " + quiz.getQuizName());
-        DAO.addingDbQuiz(quiz);
+      //  DAO.addingDbQuiz(quiz);
         return quiz;
     }
 }

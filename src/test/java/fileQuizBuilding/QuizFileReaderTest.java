@@ -35,12 +35,12 @@ public class QuizFileReaderTest {
         String resultName = list.get(0).getQuestionName();
         Category resultCategory = list.get(0).getCategory();
         int resultInt = list.get(0).getNumberOfAnswers();
-        boolean resultIsMultiply = list.get(0).isMultiply();
+        boolean resultIsMultiply = list.get(0).getIsMultiply();
 
         String resultName2 = list.get(1).getQuestionName();
         Category resultCategory2 = list.get(1).getCategory();
         int resultInt2 = list.get(1).getNumberOfAnswers();
-        boolean resultIsMultiply2 = list.get(1).isMultiply();
+        boolean resultIsMultiply2 = list.get(1).getIsMultiply();
 
         softAssert.assertEquals(resultName, "Pytanie1");
         softAssert.assertEquals(resultCategory, Category.JavaCore);

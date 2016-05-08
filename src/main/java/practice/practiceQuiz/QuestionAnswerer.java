@@ -2,8 +2,8 @@ package practice.practiceQuiz;
 
 import manualQuizBuilding.DataGeter;
 import org.apache.log4j.Logger;
-import settings.Answer;
-import settings.Question;
+import settings.ChoosenAnswer;
+import settings.ChoosenQuestion;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,19 +64,19 @@ public class QuestionAnswerer {
 
     /**
      * Method which mark choosen answer in mulitiply answer questions by matching the answer true
-     * @param question {@link settings.Question}
-     * @param answersList - List with choosen numbers of answers
+     * @param choosenQuestion {@link settings.Question}
+     * @param choosenAnswersList - List with choosen numbers of answers
      */
-    public void markChoosenAnswer(Question question, List<Integer> answersList) {
-        List<Answer> answerList = question.getAnswerList();
+    public void markChoosenAnswer(ChoosenQuestion choosenQuestion, List<Integer> choosenAnswersList) {
+        List<ChoosenAnswer> answerList = choosenQuestion.getChoosenAnswerList();
 
-        boolean checkd = true;
+        boolean checked = true;
         int i = 1;
-        for (Answer ans : answerList) {
-            for (Integer odp : answersList) {
+        for (ChoosenAnswer ans : answerList) {
+            for (Integer odp : choosenAnswersList) {
                 if (i == odp) {
                     System.out.println("odpowiedz: " + i);
-                    ans.setChoosen(checkd);
+                    ans.setChoosen(checked);
                 }
             }
             i++;
@@ -85,14 +85,14 @@ public class QuestionAnswerer {
 
     /**
      * Method which mark choosen answer in single answer questions by matching the answer true
-     * @param question {@link settings.Question}
+     * @param choosenQuestion {@link settings.ChoosenQuestion}
      * @param  n - int choosen number of Answer
      */
-    public void markChoosenAnswer(Question question, int n) {
-        List<Answer> answerList = question.getAnswerList();
+    public void markChoosenAnswer(ChoosenQuestion choosenQuestion, int n) {
+        List<ChoosenAnswer> answerList = choosenQuestion.getChoosenAnswerList();
         boolean checkd = true;
         int i = 1;
-        for (Answer ans : answerList) {
+        for (ChoosenAnswer ans : answerList) {
             if (i == n) {
                 System.out.println("odpowiedz: " + i);
                 ans.setChoosen(checkd);

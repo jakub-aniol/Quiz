@@ -1,6 +1,5 @@
 package settings;
 
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -45,12 +44,12 @@ public class QuizTest {
         listQuestions.add(quest4);
     }
 
-    @BeforeTest
+   /* @BeforeTest
     public void setup() {
         answer1e.setChoosen(true);
         answer2e.setChoosen(true);
         answer3e.setChoosen(true);
-    }
+    }*/
 
     @Test
     public void testIfCountingMaxPointForQuizIsProper() {
@@ -65,7 +64,7 @@ public class QuizTest {
         assertThat(expected).isEqualTo(result);
     }
 
-    @Test
+   /* @Test
     public void testIfGetherdPointForQuizIsProper() {
         //given
         Quiz quiz = new Quiz(listQuestions);
@@ -76,5 +75,5 @@ public class QuizTest {
         result = quiz.getMaxPointsQuiz();
         //then
         assertThat(expected).isEqualTo(result);
-    }
+    }*/
 }

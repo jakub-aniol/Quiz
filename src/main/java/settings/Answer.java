@@ -8,7 +8,6 @@ import javax.persistence.*;
  * Since 2016-04-30.
  *
  */
-@SuppressWarnings("WeakerAccess")
 @Entity
 @Table(name = "Odpowiedzi")
 public class Answer implements Comparable<Answer> {
@@ -22,15 +21,21 @@ public class Answer implements Comparable<Answer> {
     private Category category;
     @Column(name = "Ilosc_punktow")
     private int answerPoints;
-    @Column(name = "Czy_wybrana")
-    private boolean isChoosen;
     @Column(name = "Czy_prawdziwa")
     private boolean isProper;
     @ManyToOne//(targetEntity = Question.class)
-    @JoinColumn(name="ToQuestion")
+    //@JoinColumn(name="ToQuestion")
     private Question question;
 
     public Answer(){}
+
+    public Answer(Answer answer){
+        this.answerName=answer.answerName;
+        this.category=answer.category;
+        this.answerPoints=answer.answerPoints;
+        this.isProper=answer.isProper;
+        this.question=answer.question;
+    }
 
     /**
      * Basic Constructor, Answer must have:
@@ -57,14 +62,6 @@ public class Answer implements Comparable<Answer> {
 
     public boolean getIsProper() {
         return isProper;
-    }
-
-    public void setChoosen(boolean choosen) {
-        isChoosen = choosen;
-    }
-
-    public boolean getChoosen() {
-        return this.isChoosen;
     }
 
     private int getID() {
@@ -101,14 +98,6 @@ public class Answer implements Comparable<Answer> {
 
     public void setAnswerPoints(int answerPoints) {
         this.answerPoints = answerPoints;
-    }
-
-    public boolean isChoosen() {
-        return isChoosen;
-    }
-
-    public boolean isProper() {
-        return isProper;
     }
 
     public void setProper(boolean proper) {

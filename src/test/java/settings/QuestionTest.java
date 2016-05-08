@@ -1,6 +1,5 @@
 package settings;
 
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ public class QuestionTest {
         return answerList1;
     }
 
-    @BeforeTest
+   /* @BeforeTest
     public void setUp() {
         Answer answer1 = AnswerTest.getAnswer1e();
         Answer answer2 = AnswerTest.getAnswer2e();
@@ -34,7 +33,7 @@ public class QuestionTest {
         question1 = new Question("Wielokrotne", Category.GIT, true, 2, answerList1);
         question2 = new Question("Jednokrotne", Category.GIT, false, 2, answerList1);
     }
-
+*/
     @Test
     public void testIfPoinsAreCountedProperlyForMultiply() {
         //given
@@ -55,7 +54,7 @@ public class QuestionTest {
         assertThat(question2.getMaxPoints()).isEqualTo(expected);
     }
 
-    @Test
+    /*@Test
     public void testsProperCountingGainedPointsForMultiplyAnswerQuestion() {
         //given
         int maxExpected = 2;
@@ -77,5 +76,5 @@ public class QuestionTest {
         result = question2.getGainedPoints();
         //then
         assertThat(maxExpected).isEqualTo(result);
-    }
+    }*/
 }

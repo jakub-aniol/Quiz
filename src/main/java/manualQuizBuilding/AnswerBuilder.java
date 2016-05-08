@@ -11,6 +11,8 @@ class AnswerBuilder {
 
     private Answer answer = new Answer();
 
+    AnswerBuilder(){}
+
     AnswerBuilder(Answer answer){
         this.answer = answer;
     }

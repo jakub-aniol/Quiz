@@ -1,6 +1,8 @@
 package practice.presentingQuiz;
 
 import settings.Answer;
+import settings.ChoosenAnswer;
+import settings.ChoosenQuestion;
 import settings.Question;
 
 import java.util.List;
@@ -28,4 +30,17 @@ public class QuestionPresenter {
         }
         return strReturn;
     }
+
+    public static String showChoosenQuestion(ChoosenQuestion choosenQuestion) {
+        List<ChoosenAnswer> choosenAnswerList;
+        choosenAnswerList = choosenQuestion.getChoosenAnswerList();
+        int i = 0;
+        String strReturn = "" + choosenQuestion.getQuestionName() + '\n';
+        for (ChoosenAnswer ans : choosenAnswerList) {
+            i++;
+            strReturn += i + ". " + ans;
+        }
+        return strReturn;
+    }
+
 }

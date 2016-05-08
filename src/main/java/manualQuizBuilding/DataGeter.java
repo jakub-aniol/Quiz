@@ -29,53 +29,53 @@ public class DataGeter {
             e.printStackTrace();
         }
 
-    return ansNumber;
-}
+        return ansNumber;
+    }
+
     public Category askForCategory(String message) {
-        Category category =null;
+        Category category = null;
         int numberCategory;
-        out.println("Wybierz Kategorię z podanej listy");
-        System.out.println("Podaj wartosc od 1 do "+ Arrays.asList(Category.values()).size());
+        out.println(message);
+        System.out.println("Podaj wartosc od 1 do " + Arrays.asList(Category.values()).size());
         System.out.println(Arrays.asList(Category.values()));
         numberCategory = scanner.nextInt();
 
-        System.out.println("numberCategoty: "+numberCategory);
-        int i=Arrays.asList(Category.values()).size();
-        System.out.println("i: "+i);
+        System.out.println("numberCategoty: " + numberCategory);
+        int i = Arrays.asList(Category.values()).size();
+        System.out.println("i: " + i);
 
-        while(numberCategory > i) {
+        while (numberCategory > i) {
             System.out.println("podałeś złą kategorię wpisz ponownie");
             numberCategory = scanner.nextInt();
         }
 
-        System.out.println("lolo");
-
         for (Category a : Category.values()) {
-            if (numberCategory == a.ordinal()+1) {
+            if (numberCategory == a.ordinal() + 1) {
                 category = a;
                 break;
             }
         }
 
         assert category != null;
-        System.out.println("Wybrales: "+category.toString());
+        System.out.println("Wybrales: " + category.toString());
 
         return category;
     }
 
     public String askForString(String message) {
-        String str;
+        String str = "";
         out.println(message);
-        str = scanner.next();
+        str = scanner.nextLine();
         return str;
     }
+
 
     public boolean askForBoolean(String message) {
         String str;
         boolean isTrue = true;
         out.println(message);
         str = scanner.next();
-        if (str.equals("t") || str.equals("T"))
+        if (str.equalsIgnoreCase("t"))
             return isTrue;
         return !isTrue;
     }
